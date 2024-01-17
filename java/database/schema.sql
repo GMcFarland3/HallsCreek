@@ -5,8 +5,8 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS breweries;
-DROP  TABLE IF EXISTS usersToBreweries;
+DROP TABLE IF EXISTS trees;
+DROP  TABLE IF EXISTS species;
 DROP  TABLE IF EXISTS beers;
 
 CREATE TABLE users (
@@ -20,26 +20,6 @@ CREATE TABLE users (
 	phone varchar(20),
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
-
-CREATE  TABLE trees (
-    tree_id SERIAL,
-    common_name varchar(80),
-    scientific_name varchar(120),
-    color varchar(60),
-    bloom_time varchar(60),
-    size_growth_habit varchar(120),
-    hardiness_zone varchar(60),
-    light_requirement varchar(120),
-    watering_needs varchar(120),
-    soil varchar(60),
-    leaf varchar(200),
-    special varchar(200),
-    lifespan varchar(60),
-    maintenance varchar(120),
-    uses varchar(120),
-    pest_disease varchar(120),
-    origin varchar(60),
-    CONSTRAINT PK_brew PRIMARY KEY (tree_id),
 
 CREATE TABLE species (
      species_id SERIAL,
