@@ -15,17 +15,17 @@
 import MainView from "@/views/MainView.vue";
 import HeaderView from "@/views/HeaderView.vue";
 import FooterView from "@/views/FooterView.vue";
-import brewService from '../services/BreweriesService'; // Import your API service
+import treesService from '../services/TreesService'; // Import your API service
 import BeerList from '../components/BeerList.vue';
 
 export default {
   created() {
 
-    brewService
-      .getBeers()
+    treesService
+      .getTrees()
       .then(response => {
         if (response.status == 200) {
-          this.$store.commit('SET_BEERS', response.data);
+          this.$store.commit('SET_TREES', response.data);
         }
       })
       .catch(error => {
@@ -52,4 +52,4 @@ export default {
 } */
 
 /* Add any styles specific to the HomeView component */
-</style>
+</style>../services/TreesService
