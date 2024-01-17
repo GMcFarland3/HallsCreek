@@ -9,5 +9,5 @@ WHERE datname = 'halls_creek';
 
 DROP DATABASE halls_creek;
 
-DROP USER final_capstone_owner;
-DROP USER final_capstone_appuser;
+
+DROP USER halls_creek_app_user;
