@@ -6,21 +6,26 @@ export function createStore(currentToken, currentUser) {
     state: {
       token: currentToken || '',
       user: currentUser || {},
-      brewersID: 0,
-      breweries: [{
-        brew_Id: '',
-        userId: '',
-        name: '',
-        address: '',
-        address2: '',
-        city: '',
-        state_abbr: '',
-        zip_code: '',
-        phone: '',
-        website: '',
-        history: '',
-        operation_hours: '',
-        image: ''
+
+      trees: [{
+        tree_id: '',
+        species_id: '',
+        common_name: '',
+        scientific_name: '',
+        color: '',
+        bloom_time: '',
+        size_growth_habit: '',
+        hardiness_zone: '',
+        light_requirement: '',
+        watering_needs: '',
+        soil: '',
+        leaf: '',
+        special: '',
+        lifespan: '',
+        maintenance: '',
+        uses: '',
+        pest_disease: '',
+        origin: ''
       }],
 
       beers: [
