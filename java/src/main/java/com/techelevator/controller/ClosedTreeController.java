@@ -24,7 +24,6 @@ public class ClosedTreeController {
         this.speciesDao = speciesDao;
     }
 
-    // CRUD operations for Trees
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/addtree")
     @PreAuthorize("hasRole('ADMIN')")
@@ -68,7 +67,6 @@ public class ClosedTreeController {
         }
     }
 
-    // CRUD operations for Species
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/addspecies")
     @PreAuthorize("hasRole('ADMIN')")

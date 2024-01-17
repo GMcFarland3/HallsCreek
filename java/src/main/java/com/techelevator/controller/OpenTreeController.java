@@ -7,6 +7,8 @@ import com.techelevator.model.Species;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
 
 @CrossOrigin
@@ -26,19 +28,31 @@ public class OpenTreeController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/trees")
     public List<Tree> listTrees() {
-        return treeDao.listTrees();
+        try {
+            return treeDao.listTrees();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error fetching tree list", e);
+        }
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/species")
     public List<Species> listSpecies() {
-        return speciesDao.listSpecies();
+        try {
+            return speciesDao.listSpecies();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error fetching species list", e);
+        }
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/treesWithSpecies")
     public List<Tree> getAllTreesWithSpecies() {
-        return treeDao.getAllTreesWithSpecies();
+        try {
+            return treeDao.getAllTreesWithSpecies();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error fetching trees with species", e);
+        }
     }
 
 }
