@@ -3,11 +3,11 @@ import axios from 'axios';
 export default {
 
     // Open API calls for non-login users can view
-    getBreweries() {
-        return axios.get('/breweries')
+    getTrees() {
+        return axios.get('/trees')
     },
-    getBeers() {
-        return axios.get('/beers')
+    getSpecies() {
+        return axios.get('/species')
     },
     getReviews() {
         return axios.get('/reviews')

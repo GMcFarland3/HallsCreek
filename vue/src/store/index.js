@@ -25,21 +25,18 @@ export function createStore(currentToken, currentUser) {
         maintenance: '',
         uses: '',
         pest_disease: '',
-        origin: ''
+        origin: '',
+        image: ''
       }],
 
-      beers: [
-        {
-          beer_Id: '',
-          brew_Id: '',
-          name: '',
-          type: '',
-          abv: '',
-          description: '',
-          image: '',
-          status: ''
-        }
-      ],
+      species: [ {
+        species_id: '',
+        common_name: '',
+        scientific_name: '',
+        color: '',
+        bloom_time: '',
+        size_growth_habit: ''
+      }],
 
       reviews: [
         {
@@ -88,11 +85,11 @@ export function createStore(currentToken, currentUser) {
         axios.defaults.headers.common = {};
         state.brewersID = 0;
       },
-      SET_BREWERIES(state, breweries) {
-        state.breweries = breweries;
+      SET_TREES(state, trees) {
+        state.trees = trees;
       },
-      SET_BEERS(state, beers) {
-        state.beers = beers;
+      SET_SPECIES(state, species) {
+        state.beers = species;
       },
       SET_REVIEWS(state, reviews) {
         state.reviews = reviews;
@@ -100,9 +97,6 @@ export function createStore(currentToken, currentUser) {
       SET_USERS(state, users) {
         state.users = users;
       },
-      SET_BREWERSID(state, id) {
-        state.brewersID = id;
-      }
     },
 
 
