@@ -6,16 +6,12 @@
       </div>
       <div class="nav">
         <router-link v-bind:to="{ name: 'home' }" class="nav-link">HOME</router-link>
-        <router-link v-bind:to="{ name: 'breweries' }" class="nav-link">BREWERIES</router-link>
         <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token" class="nav-link">LOGIN</router-link>
         <router-link v-bind:to="{ name: 'register' }" v-if="!$store.state.token" class="nav-link">REGISTER</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token" class="nav-link">LOGOUT</router-link>
         <router-link v-bind:to="{ name: 'admin' }" v-if="showAdmin" class="nav-link">ADMIN</router-link>
       </div>
     </div>
-    <!-- <router-link v-bind:to="{ name: 'home' }" class="logo">
-      <img id="banner" src="../assets/img/BrewScout.png" alt="BrewScout Logo">
-    </router-link> -->
   </header>
 </template>
   
@@ -41,7 +37,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url('C:..\assets\img\BSH.jpg');
+  background-image: url('../assets/img/banner.webp');
   /* Replace 'your-image.jpg' with the actual image file name */
   background-size: cover;
   /* Adjust to your needs, 'cover' makes the image cover the entire element */

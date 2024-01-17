@@ -62,7 +62,7 @@
 </template>
   
 <script>
-import brewService from '../services/BreweriesService'; // Import your API service
+
 
 export default {
     data() {

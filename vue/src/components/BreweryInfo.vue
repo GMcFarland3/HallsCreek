@@ -29,7 +29,7 @@
 </template>
   
 <script>
-import BreweriesService from '../services/BreweriesService';
+
 export default {
     props: {
         brew_id: {
