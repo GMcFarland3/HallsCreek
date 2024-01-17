@@ -7,7 +7,6 @@ import com.techelevator.model.Species;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin
@@ -34,6 +33,12 @@ public class OpenTreeController {
     @GetMapping("/species")
     public List<Species> listSpecies() {
         return speciesDao.listSpecies();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/treesWithSpecies")
+    public List<Tree> getAllTreesWithSpecies() {
+        return treeDao.getAllTreesWithSpecies();
     }
 
 }

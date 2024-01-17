@@ -78,11 +78,43 @@ public class JdbcTreeDao implements TreeDao {
         return tree;
     }
 
+    public List<Tree> getAllTreesWithSpecies() {
+        List<Tree> trees = new ArrayList<>();
+        String sql = "SELECT t.tree_id, t.species_id, s.common_name, s.scientific_name, t.color, t.bloom_time, t.size_growth_habit, t.image "
+                + "FROM trees t "
+                + "INNER JOIN species s ON t.species_id = s.species_id "
+                + "ORDER BY t.species_id;";
+
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while (results.next()) {
+                Tree tree = mapRowToTreeWithSpecies(results);
+                trees.add(tree);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        }
+        return trees;
+    }
+
     private Tree mapRowToTree(SqlRowSet rs) {
         Tree tree = new Tree();
         tree.setTreeId(rs.getInt("tree_id"));
         tree.setSpeciesId(rs.getInt("species_id"));
         tree.setImage(rs.getString("image")); // Mapping the image field
+        tree.setCommonName(rs.getString("common_name"));
+        tree.setScientificName(rs.getString("scientific_name"));
         return tree;
     }
+    private Tree mapRowToTreeWithSpecies(SqlRowSet rs) {
+        Tree tree = new Tree();
+        tree.setTreeId(rs.getInt("tree_id"));
+        tree.setSpeciesId(rs.getInt("species_id"));
+        tree.setImage(rs.getString("image")); // Mapping the image field
+        tree.setCommonName(rs.getString("common_name"));
+        tree.setScientificName(rs.getString("scientific_name"));
+        // Map other fields as necessary
+        return tree;
+    }
+
 }
