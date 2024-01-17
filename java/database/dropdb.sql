@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 -- **************************************************************
 -- This script destroys the database and associated users
 -- **************************************************************
