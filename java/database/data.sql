@@ -33,7 +33,7 @@ COMMIT;
 BEGIN TRANSACTION;
 -- Inserting into trees table
 INSERT INTO trees (species_id, common_name, scientific_name, color, bloom_time, size_growth_habit, hardiness_zone, light_requirement, watering_needs, soil, leaf, special, lifespan, maintenance, uses, pest_disease, origin, image)
-VALUES (1, 'Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Acorns as fruit', '100 years', 'Low', 'Shade tree', 'Oak wilt, root rot', 'Northern Hemisphere', 'http://example.com/oak.jpg');
+VALUES (1, 'Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Acorns as fruit', '100 years', 'Low', 'Shade tree', 'Oak wilt, root rot', 'Northern Hemisphere', 'https://www.lovethegarden.com/sites/default/files/content/articles/UK_old-english-oak-tree.jpg');
 
 -- Add more trees similarly for species_id 2, 3, 4, 5
 
