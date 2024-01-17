@@ -9,6 +9,7 @@ export function createStore(currentToken, currentUser) {
 
       trees: [{
         tree_id: '',
+        species_id: '',
         common_name: '',
         scientific_name: '',
         color: '',
