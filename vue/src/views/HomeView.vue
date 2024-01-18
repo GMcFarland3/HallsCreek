@@ -15,25 +15,12 @@
 import MainView from "@/views/MainView.vue";
 import HeaderView from "@/views/HeaderView.vue";
 import FooterView from "@/views/FooterView.vue";
-import treesService from '../services/TreesService'; // Import your API service
+
 
 
 export default {
   created() {
 
-    treesService
-      .getTrees()
-      .then(response => {
-        if (response.status == 200) {
-          this.$store.commit('SET_TREES', response.data);
-        }
-      })
-      .catch(error => {
-        const response = error.response;
-        if (response.status === 401) {
-          this.invalidCredentials = true;
-        }
-      });
   },
 
   components: {
@@ -45,10 +32,6 @@ export default {
 </script>
 
 <style scoped>
-/* .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-} */
+
 
 </style>../services/TreesService
