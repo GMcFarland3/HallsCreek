@@ -21,37 +21,37 @@ CREATE TABLE users (
 );
 
 CREATE TABLE species (
-     species_id SERIAL,
-     common_name varchar(80),
-     scientific_name varchar(120),
+     speciesId SERIAL,
+     commonName varchar(80),
+     scientificName varchar(120),
      color varchar(60),
-     bloom_time varchar(60),
-     size_growth_habit varchar(120),
-     CONSTRAINT PK_species PRIMARY KEY (species_id)
+     bloomTime varchar(60),
+     sizeGrowthHabit varchar(120),
+     CONSTRAINT PK_species PRIMARY KEY (speciesId)
 );
 
 CREATE TABLE trees (
-   tree_id SERIAL,
-   species_id int NOT NULL,
-   common_name varchar(80),
-   scientific_name varchar(120),
+   treeId SERIAL,
+   speciesId int NOT NULL,
+   commonName varchar(80),
+   scientificName varchar(120),
    color varchar(60),
-   bloom_time varchar(60),
-   size_growth_habit varchar(120),
-   hardiness_zone varchar(60),
-   light_requirement varchar(120),
-   watering_needs varchar(120),
+   bloomTime varchar(60),
+   sizeGrowthHabit varchar(120),
+   hardinessZone varchar(60),
+   lightRequirement varchar(120),
+   wateringNeeds varchar(120),
    soil varchar(60),
    leaf varchar(200),
    special varchar(200),
    lifespan varchar(60),
    maintenance varchar(120),
    uses varchar(120),
-   pest_disease varchar(120),
+   pestDisease varchar(120),
    origin varchar(60),
    image varchar(700),
-   CONSTRAINT PK_tree PRIMARY KEY (tree_id),
-   CONSTRAINT FK_species FOREIGN KEY (species_id) REFERENCES species(species_id)
+   CONSTRAINT PK_tree PRIMARY KEY (treeId),
+   CONSTRAINT FK_species FOREIGN KEY (speciesId) REFERENCES species(speciesId)
 );
 
 CREATE TABLE reviews (

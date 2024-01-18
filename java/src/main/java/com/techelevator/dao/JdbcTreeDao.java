@@ -20,7 +20,7 @@ public class JdbcTreeDao implements TreeDao {
     @Override
     public List<Tree> listTrees() {
         List<Tree> trees = new ArrayList<>();
-        String sql = "SELECT tree_id, species_id, image FROM trees ORDER BY species_id;";
+        String sql = "SELECT treeid, speciesid, commonname, scientificname, color, bloomtime, sizegrowthhabit, hardinesszone, lightrequirement, wateringneeds, soil, leaf, special, lifespan, maintenance, uses, pestdisease, origin, image FROM trees ORDER BY commonname;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
@@ -99,20 +99,34 @@ public class JdbcTreeDao implements TreeDao {
 
     private Tree mapRowToTree(SqlRowSet rs) {
         Tree tree = new Tree();
-        tree.setTreeId(rs.getInt("tree_id"));
-        tree.setSpeciesId(rs.getInt("species_id"));
-        tree.setImage(rs.getString("image")); // Mapping the image field
-        tree.setCommonName(rs.getString("common_name"));
-        tree.setScientificName(rs.getString("scientific_name"));
+        tree.setTreeId(rs.getInt("treeid"));
+        tree.setSpeciesId(rs.getInt("speciesid"));
+        tree.setCommonName(rs.getString("commonname"));
+        tree.setScientificName(rs.getString("scientificname"));
+        tree.setColor(rs.getString("color"));
+        tree.setBloomTime(rs.getString("bloomtime"));
+        tree.setSizeGrowthHabit(rs.getString("sizegrowthhabit"));
+        tree.setHardinessZone(rs.getString("hardinesszone"));
+        tree.setLightRequirement(rs.getString("lightrequirement"));
+        tree.setWateringNeeds(rs.getString("wateringneeds"));
+        tree.setSoil(rs.getString("soil"));
+        tree.setLeaf(rs.getString("leaf"));
+        tree.setSpecial(rs.getString("special"));
+        tree.setLifespan(rs.getString("lifespan"));
+        tree.setMaintenance(rs.getString("maintenance"));
+        tree.setUses(rs.getString("uses"));
+        tree.setPestDisease(rs.getString("pestdisease"));
+        tree.setOrigin(rs.getString("origin"));
+        tree.setImage(rs.getString("image"));
         return tree;
     }
     private Tree mapRowToTreeWithSpecies(SqlRowSet rs) {
         Tree tree = new Tree();
-        tree.setTreeId(rs.getInt("tree_id"));
-        tree.setSpeciesId(rs.getInt("species_id"));
-        tree.setImage(rs.getString("image")); // Mapping the image field
-        tree.setCommonName(rs.getString("common_name"));
-        tree.setScientificName(rs.getString("scientific_name"));
+//        tree.setTreeId(rs.getInt("tree_id"));
+//        tree.setSpeciesId(rs.getInt("species_id"));
+//        tree.setImage(rs.getString("image")); // Mapping the image field
+//        tree.setCommonName(rs.getString("common_name"));
+//        tree.setScientificName(rs.getString("scientific_name"));
         // Map other fields as necessary
         return tree;
     }

@@ -8,34 +8,34 @@ export function createStore(currentToken, currentUser) {
       user: currentUser || {},
 
       trees: [{
-        tree_id: '',
-        species_id: '',
-        common_name: '',
-        scientific_name: '',
+        treeId: '',
+        speciesId: '',
+        commonName: '',
+        scientificName: '',
         color: '',
-        bloom_time: '',
-        size_growth_habit: '',
-        hardiness_zone: '',
-        light_requirement: '',
-        watering_needs: '',
+        bloomTime: '',
+        sizeGrowthHabit: '',
+        hardinessZone: '',
+        lightRequirement: '',
+        wateringNeeds: '',
         soil: '',
         leaf: '',
         special: '',
         lifespan: '',
         maintenance: '',
         uses: '',
-        pest_disease: '',
+        pestDisease: '',
         origin: '',
         image: ''
       }],
 
       species: [ {
-        species_id: '',
-        common_name: '',
-        scientific_name: '',
+        speciesId: '',
+        commonName: '',
+        scientificName: '',
         color: '',
-        bloom_time: '',
-        size_growth_habit: ''
+        bloomTime: '',
+        sizeGrowthHabit: ''
       }],
 
       reviews: [

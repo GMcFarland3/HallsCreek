@@ -65,7 +65,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  background-color:rgb(0, 140, 255);
+  background-color:rgb(96, 137,119);
 }
 
 .featured-section,

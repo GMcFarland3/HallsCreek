@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+      <div class="logo"><img src="../assets/img/Logo.png" alt="Missing file"></div>
       <div class="brand">
         <h1>Hall's Creek Tree Farm</h1>
       </div>
@@ -44,6 +45,14 @@ export default {
   padding: 1px;
   height: 15rem;
 }
+.logo {
+  width: 150px;
+  height: 150px;
+}
+img {
+  width: 150px;
+  height: 150px;
+}
 .brand {
   justify-content: top;
   align-items: top ;
@@ -53,9 +62,10 @@ export default {
 h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
-  color:rgb(0, 140, 255);
+  color: rgb(96, 137,119);;
+  /* color:rgb(174, 161, 117); */
   font-size: 6rem;
-  background-color:black;
+  background-color:rgb(174, 161, 117);
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
@@ -74,7 +84,7 @@ h1 {
 
 .nav-link {
   text-decoration: none;
-  color: rgb(0, 140, 255);
+  color: rgb(96, 137,119);
   padding: 10px 20px; /* Increase padding for a bigger button */
   transition: all 0.3s; /* Simplified transition property */
   font-weight: bold;
@@ -82,7 +92,7 @@ h1 {
 }
 
 .nav-link:hover {
-  color: rgb(0, 140, 255);
+  color: rgb(96, 137,119);
   transform: translateY(-3px); /* Move the button slightly up */
   /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); Enhance box shadow on hover */
 }
@@ -94,7 +104,7 @@ h1 {
 .spacer {
   border-style: solid;
   border-width: 1px;
-  border-right-color:black;
+  border-right-color:rgb(174, 161, 117);
 }
 
 </style>
