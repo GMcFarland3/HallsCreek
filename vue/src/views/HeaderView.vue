@@ -53,12 +53,12 @@ export default {
 h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
-  color:rgb(255, 251, 1);
+  color:rgb(0, 140, 255);
   font-size: 6rem;
-  background-color:rgb(0, 140, 255);
+  background-color:black;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-  border-top-right-radius: 25%;
-  border-bottom-right-radius: 25%;
+  border-top-right-radius: 75px;
+  border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
   margin-bottom: 2rem;
 }
