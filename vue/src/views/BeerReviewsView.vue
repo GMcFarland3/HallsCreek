@@ -16,11 +16,6 @@
 import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
 import BreweryInfo from '../components/BreweryInfo.vue';
-<<<<<<< HEAD
-=======
-// import BeerList from '../components/BeerList.vue';
-
->>>>>>> a9fe8987cadf65cd26f7ba0e15dc322bc9b789e5
 import Review from '../components/Review.vue';
 
 export default {
