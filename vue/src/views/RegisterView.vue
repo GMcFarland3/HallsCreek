@@ -100,13 +100,11 @@ export default {
   margin-top: 2rem;
 }
 
-
 #login {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color:  cadetblue;
+  background-color:  rgb(0, 140, 255);
   height: 52rem;
   text-align: center;
-  /* background-image: url('../assets/img/homePage2.png'); */
 }
 
 .form-input-group {
@@ -115,7 +113,6 @@ export default {
   margin-bottom: 1rem;
   color: rgb(9, 9, 9);
   font-weight: bold;
-
 }
 
 label {

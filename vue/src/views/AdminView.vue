@@ -44,7 +44,7 @@
 <script>
 import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
-import brewService from "../services/BreweriesService";
+import treesService from "../services/TreesService"
 import UserService from "../services/UserService";
 
 export default {
@@ -80,7 +80,7 @@ export default {
         },
 
         addBrewery() {
-            brewService
+            treesService
                 .addBrewery(this.brewery)
                 .then((response) => {
                     if (response.status == 201) {

@@ -3,6 +3,7 @@ import { useStore } from 'vuex'
 
 // Import components
 import HomeView from '../views/HomeView.vue';
+import treesService from "../services/TreesService"
 import BreweryListView from '../views/BreweryListView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
@@ -11,6 +12,7 @@ import AdminView from '../views/AdminView.vue';
 import BreweryInfoView from '../views/BreweryInfoView.vue';
 import BrewAdminView from '../views/brewerView.vue';
 import BeerReviewsView from '../views/BeerReviewsView.vue';
+
 
 // Define routes
 const routes = [
@@ -24,8 +26,8 @@ const routes = [
   },
 
   {
-    path: '/brewer',
-    name: 'brewer',
+    path: '/trees',
+    name: 'trees',
     component: BrewAdminView,
     meta: {
       requiresAuth: false

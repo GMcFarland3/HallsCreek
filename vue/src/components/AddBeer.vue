@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import BreweriesService from "../services/BreweriesService"
+import treesService from "../services/TreesService"
 export default {
     props: ['brewery'],
 
@@ -196,7 +196,7 @@ export default {
     methods: {
         submitBeer() {
             this.beer.brewId = this.brewery.brew_id;
-            BreweriesService
+            treesService
                 .insertBeer(this.beer)
                 .then(response => {
                     if (response.status === 201) {
@@ -213,7 +213,7 @@ export default {
         updateBrewery() {
 
             this.updateBrew.brew_id = this.brewery.brew_id;
-            BreweriesService
+            treesService
                 .updateBrewery(this.updateBrew)
                 .then(response => {
                     if (response.status === 201) {
@@ -231,7 +231,7 @@ export default {
             this.upBeers.brewId = this.brewery.brew_id;
             if (this.upBeers.brewId > 0) {
                 this.upBeers.brewId = this.brewery.brew_id;
-                BreweriesService
+                treesService
                     .updateBeer(this.upBeers)
                     .then(response => {
                         if (response.status === 201) {
@@ -250,7 +250,7 @@ export default {
                         console.error('Error updating brewery:', error);
                     });
             } else {
-                BreweriesService
+                treesService
                     .insertBeer(this.upBeers)
                     .then(response => {
                         if (response.status === 201) {

@@ -16,7 +16,6 @@
 import HeaderView from './HeaderView.vue'
 import BreweryList from '../components/BreweryList.vue';
 import FooterView from './FooterView.vue';
-import brewService from "../services/BreweriesService";
 
 export default {
   data() {

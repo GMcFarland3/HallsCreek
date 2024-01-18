@@ -16,7 +16,7 @@ import MainView from "@/views/MainView.vue";
 import HeaderView from "@/views/HeaderView.vue";
 import FooterView from "@/views/FooterView.vue";
 import treesService from '../services/TreesService'; // Import your API service
-import BeerList from '../components/BeerList.vue';
+
 
 export default {
   created() {
@@ -51,5 +51,4 @@ export default {
   width: 100%;
 } */
 
-/* Add any styles specific to the HomeView component */
 </style>../services/TreesService

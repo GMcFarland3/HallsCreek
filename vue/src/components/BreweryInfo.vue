@@ -12,6 +12,7 @@
                 <h2>{{ brewery.history }}</h2> <!-- Display the brewery's description -->
             </div>
         </div>
+        
 
         <div class="details">
             <h3>DETAILS</h3>
@@ -29,7 +30,7 @@
 </template>
   
 <script>
-import BreweriesService from '../services/BreweriesService';
+import treesService from "../services/TreesService"
 export default {
     props: {
         brew_id: {

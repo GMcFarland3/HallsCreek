@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h3>© 2023 BrewScout</h3>
-
+        <h3>© 2024 Hall's Creek Tree Farm.  All rights reserved.</h3>
     </div>
 </template>
 
@@ -13,12 +12,13 @@ export default {
 
 <style scoped>
 h3 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'IM Fell English', serif;
     text-align: center;
-    font-size: 1.5em;
-    color: #fff;
-    padding: 1em;
-    background-color: #5a5858;
-    margin: 0;
+    font-size: 1.75em;
+    color:rgb(0, 140, 255);
+    background-color: black;
+    height: 3rem;
+    margin: 0 0 0 0;
+    padding-top: 0.5rem;
 }
 </style>

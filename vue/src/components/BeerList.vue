@@ -27,11 +27,8 @@
 
 <script>
 
-import brewService from '../services/BreweriesService'; // Import your API service
-
+import treesService from "../services/TreesService"
 export default {
-  props: ['beers'],
-
   data() {
     return {
       review: {
@@ -50,7 +47,7 @@ export default {
   },
 
   created() {
-    brewService
+    treesService
       .getReviews()
       .then(response => {
         if (response.status == 200) {

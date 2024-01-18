@@ -62,7 +62,7 @@
 </template>
   
 <script>
-import brewService from '../services/BreweriesService'; // Import your API service
+import treesService from "../services/TreesService"
 
 export default {
     data() {
@@ -128,7 +128,7 @@ export default {
     },
 
     created() {
-        brewService
+        treesService
             .getReviews()
             .then(response => {
                 if (response.status == 200) {
@@ -156,7 +156,7 @@ export default {
             this.review.beer_id = this.oneBeer.beer_Id; // Set the beer ID
             this.review.beerName = this.oneBeer.name; // Set the beer name
             this.review.image = this.photoUrl; // Set the beer image
-            brewService
+            treesService
                 .insertReview(this.review)
                 .then(response => {
                     if (response.status === 201) {
