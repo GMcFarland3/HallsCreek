@@ -11,18 +11,18 @@
 <script>
 export default {
   props: {
-    trees: Array, // Pass the breweries array as a prop
+    trees: Array, // Pass the trees array as a prop
   },
   data() {
     return {
-      currentTreeIndex: 1,
+      currentTreeIndex: 0,
       intervalId: null, // Store the interval ID
     };
   },
   computed: {
     currentTree() {
-      return this.trees.filter(tree => tree.treeId == 2);
-      // return this.trees[this.currentTreeIndex];
+      // return this.trees;
+      return this.trees[this.currentTreeIndex];
     },
   },
   methods: {
