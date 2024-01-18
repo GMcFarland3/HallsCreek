@@ -1,4 +1,7 @@
 <template>
+  <div class="header">
+    <HeaderView />
+  </div>
   <div id="login">
     <div id="home">
       <router-link v-bind:to="{ name: 'home' }" class="white-link">Home</router-link>
@@ -35,11 +38,13 @@
 </template>
 
 <script>
+import HeaderView from "@/views/HeaderView.vue";
 import authService from '../services/AuthService';
 import FooterView from './FooterView.vue';
 
 export default {
   components: {
+    HeaderView,
     FooterView,
   },
   data() {
@@ -94,16 +99,13 @@ export default {
   font-weight: bold;
 }
 
-#brewscout {
-  width: 20rem;
-  height: 20rem;
-  margin-top: 2rem;
-}
 
 #login {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color:  rgb(0, 140, 255);
-  height: 52rem;
+background-image: url("../assets/img/register.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 47.8rem;
   text-align: center;
 }
 

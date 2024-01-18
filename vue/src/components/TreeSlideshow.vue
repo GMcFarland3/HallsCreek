@@ -1,7 +1,7 @@
 <template>
   <div class="fadephoto">
     <transition name="fade">
-      <div>
+      <div v-if="currentTree">
         <img :src="currentTree.image" :alt="currentTree.commonName" class="fade-image" />
       </div>
     </transition>
@@ -11,18 +11,17 @@
 <script>
 export default {
   props: {
-    trees: Array, // Pass the breweries array as a prop
+    trees: Array,
   },
   data() {
     return {
-      currentTreeIndex: 1,
-      intervalId: null, // Store the interval ID
+      currentTreeIndex: 0,
+      intervalId: null,
     };
   },
   computed: {
     currentTree() {
-      return this.trees.filter(tree => tree.treeId == 2);
-      // return this.trees[this.currentTreeIndex];
+      return this.trees.length ? this.trees[this.currentTreeIndex] : null;
     },
   },
   methods: {
@@ -30,14 +29,13 @@ export default {
       this.currentTreeIndex = (this.currentTreeIndex + 1) % this.trees.length;
     },
     startSlideshow() {
-      this.intervalId = setInterval(this.nextTree, 9000); // Automatically switch images every 9 seconds
+      this.intervalId = setInterval(this.nextTree, 9000);
     },
   },
   mounted() {
     this.startSlideshow();
   },
   beforeUnmount() {
-    // Clear the interval when the component is unmounted to prevent memory leaks
     clearInterval(this.intervalId);
   },
 };
@@ -50,34 +48,18 @@ export default {
   align-items: center;
   height: 40rem;
   overflow: hidden;
-  animation: fadeAnimation 9s ease-in-out infinite;
-  /* Apply animation to the whole slideshow */
 }
 
 .fade-image {
-  animation: fadeAnimation 9s linear infinite;
-  /* Apply fade animation */
-  max-width: 100%;
-  /* Use max-width instead of fixed width */
-  max-height: 100%;
-  /* Use max-height instead of fixed height */
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  /* Maintain aspect ratio and fit the entire image within the container */
+  animation: fadeAnimation 9s linear infinite;
 }
 
-/* CSS Animation */
 @keyframes fadeAnimation {
-
-  0%,
-  100% {
-    opacity: 0;
-    /* Initial and final opacity set to 0 */
-  }
-
-  25%,
-  75% {
-    opacity: 1;
-    /* Middle of the animation with opacity 1 */
-  }
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
 }
 </style>
+

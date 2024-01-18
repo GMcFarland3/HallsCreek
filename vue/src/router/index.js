@@ -9,9 +9,6 @@ import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import AdminView from '../views/AdminView.vue';
 
-import BreweryListView from '../views/BreweryListView.vue';
-import BrewAdminView from '../views/brewerView.vue';
-import BeerReviewsView from '../views/BeerReviewsView.vue';
 
 
 // Define routes
@@ -33,47 +30,10 @@ const routes = [
       requiresAuth: false
     }
   },
-
-  {
-    path: '/breweries',
-    name: 'breweries',
-    component: BreweryListView,
-  },
-
-  {
-    path: '/breweryInfo/:brew_Id',
-    name: 'breweryInfo',
-    component: BreweryListView,
-    props: true
-  },
-
-  {
-    path: '/breweries/beers',
-    name: 'beers',
-    component: BreweryListView,
-    props: true
-  },
-
-  {
-    path: '/reviews/:beer_id',
-    name: 'reviews',
-    component: BeerReviewsView,
-    props: true
-  },
-
   {
     path: '/admin',
     name: 'admin',
     component: AdminView,
-    meta: {
-      requiresAuth: false
-    }
-  },
-
-  {
-    path: '/brewAdmin/:brew_Id',
-    name: 'brewAdmin',
-    component: BrewAdminView,
     meta: {
       requiresAuth: false
     }

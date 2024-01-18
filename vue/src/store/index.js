@@ -98,8 +98,17 @@ export function createStore(currentToken, currentUser) {
         state.users = users;
       },
     },
-
-
+    actions: {
+      fetchTrees({commit}) {
+        axios.get('/trees')
+            .then(response => {
+              commit('SET_TREES', response.data);
+            })
+            .catch(error => {
+              console.error('Error fetching trees:', error);
+            });
+      },
+    }
   });
   return store;
 }

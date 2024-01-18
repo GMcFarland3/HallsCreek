@@ -33,13 +33,6 @@ export default {
 
 <style scoped>
 
-/* .page {
-  background-color:  rgb(96, 137,119);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-} */
 
 FooterView {
     position: fixed;

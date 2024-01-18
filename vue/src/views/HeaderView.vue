@@ -9,7 +9,9 @@
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'trees' }" class="nav-link">TREES</router-link>
         <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'home' }" class="nav-link">ABOUT US</router-link>
+        <router-link v-bind:to="{ name: 'home' }" class="nav-link">ABOUT</router-link>
+        <div class="spacer"></div>
+        <router-link v-bind:to="{ name: 'register' }" v-if="!$store.state.token" class="nav-link">REGISTER</router-link>
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token" class="nav-link">LOGIN</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token" class="nav-link">LOGOUT</router-link>
@@ -43,7 +45,7 @@ export default {
   flex-direction: row;
   justify-content:space-between;
   padding: 1px;
-  height: 15rem;
+  height: 10rem;
 }
 .logo {
   width: 150px;
@@ -63,14 +65,13 @@ h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
   color: rgb(96, 137,119);
-  /* color:rgb(174, 161, 117); */
-  font-size: 6rem;
+  font-size: 5rem;
   background-color:rgb(174, 161, 117);
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-right: 4rem;
   padding-left: 2rem;
 }
