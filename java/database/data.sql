@@ -7,7 +7,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('bob','$2a$10$ocEQn6rIm3
 INSERT INTO users (username,password_hash,role) VALUES ('jack','$2a$10$xVN8wyDaN1j4YGOmQnVQbemuSxUR3C0C0zhx/i21Q7/jqUX0zPVNG','ROLE_ADMIN');  -- User ID 4
 COMMIT;
 
- 
+
 BEGIN TRANSACTION;
 
 -- Inserting into species table

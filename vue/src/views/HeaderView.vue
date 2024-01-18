@@ -56,11 +56,13 @@ h1 {
   color:rgb(0, 140, 255);
   font-size: 6rem;
   background-color:black;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
   margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
 }
 .nav {
   display: flex;
