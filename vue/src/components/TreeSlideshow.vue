@@ -1,9 +1,9 @@
 <template>
   <div class="fadephoto">
     <transition name="fade">
-      <router-link v-if="currentBrewery" :to="'/breweryInfo/' + currentBrewery.brew_id">
-        <img :src="currentBrewery.image" :alt="currentBrewery.name" class="fade-image" />
-      </router-link>
+      <div>
+        <img :src="currentTree.image" :alt="currentTree.commonName" class="fade-image" />
+      </div>
     </transition>
   </div>
 </template>
@@ -11,25 +11,26 @@
 <script>
 export default {
   props: {
-    breweries: Array, // Pass the breweries array as a prop
+    trees: Array, // Pass the breweries array as a prop
   },
   data() {
     return {
-      currentBreweryIndex: 0,
+      currentTreeIndex: 1,
       intervalId: null, // Store the interval ID
     };
   },
   computed: {
-    currentBrewery() {
-      return this.breweries[this.currentBreweryIndex];
+    currentTree() {
+      return this.trees.filter(tree => tree.treeId == 2);
+      // return this.trees[this.currentTreeIndex];
     },
   },
   methods: {
-    nextBrewery() {
-      this.currentBreweryIndex = (this.currentBreweryIndex + 1) % this.breweries.length;
+    nextTree() {
+      this.currentTreeIndex = (this.currentTreeIndex + 1) % this.trees.length;
     },
     startSlideshow() {
-      this.intervalId = setInterval(this.nextBrewery, 9000); // Automatically switch images every 9 seconds
+      this.intervalId = setInterval(this.nextTree, 9000); // Automatically switch images every 9 seconds
     },
   },
   mounted() {

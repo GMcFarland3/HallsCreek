@@ -3,13 +3,13 @@ import { useStore } from 'vuex'
 
 // Import components
 import HomeView from '../views/HomeView.vue';
-import treesService from "../services/TreesService"
-import BreweryListView from '../views/BreweryListView.vue';
+import TreeListView from '../views/TreeListView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import AdminView from '../views/AdminView.vue';
-import BreweryInfoView from '../views/BreweryInfoView.vue';
+
+import BreweryListView from '../views/BreweryListView.vue';
 import BrewAdminView from '../views/brewerView.vue';
 import BeerReviewsView from '../views/BeerReviewsView.vue';
 
@@ -28,11 +28,10 @@ const routes = [
   {
     path: '/trees',
     name: 'trees',
-    component: BrewAdminView,
+    component: TreeListView,
     meta: {
       requiresAuth: false
     }
-
   },
 
   {
@@ -44,14 +43,14 @@ const routes = [
   {
     path: '/breweryInfo/:brew_Id',
     name: 'breweryInfo',
-    component: BreweryInfoView,
+    component: BreweryListView,
     props: true
   },
 
   {
     path: '/breweries/beers',
     name: 'beers',
-    component: BreweryInfoView,
+    component: BreweryListView,
     props: true
   },
 

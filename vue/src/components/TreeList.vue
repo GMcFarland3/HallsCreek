@@ -1,68 +1,45 @@
 <template>
   <div>
-    <section class="beers-list">
-      <div><h1>Beers</h1></div>
-      <div v-for="beer in beers" :key="beer.beer_id" class="beer-card">
-        <div class="beer-image-container">
-          <img :src="beer.image" alt="beer" class="beer-image" />
+    <section class="tree-list">
+      <div><h1>Trees</h1></div>
+      <!-- <div v-for="(tree) in returnTrees" :key="tree.treeId" class="tree-card">
+        <div class="tree-image-container">
+          <img :src="tree.image" alt="tree" class="tree-image" />
         </div>
-        <div class="beer-info">
-          <h3>{{ beer.name }}</h3>
-          <div id="description">{{ beer.description }}</div>
+        <div class="tree-info">
+          <h3>{{ tree.commonName }}</h3>
+          <div id="description">{{ tree.scientificName }}</div>
           <div id="subset">
-            <div class="details">{{ beer.type }}</div>
+            <div class="details">{{ tree.leaf }}</div>
             <div class="spacer"></div>
-            <div class="details">Average Star Rating(s) {{ displayAverageRating(beer.beer_Id) }}</div>
+            <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div>
             <div class="spacer"></div>
-            <div class="details">{{ beer.abv }} abv</div>
+            <div class="details">{{ tree.uses }} abv</div>
           </div>
           <div class="topspacer"></div>
-          <router-link :to="'/reviews/' + beer.beer_Id" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
-          <div id="stock" v-if="beer.status">== OUT OF STOCK ==</div>
+          <router-link :to="'/reviews/' + tree.treeId" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
+          <div class="details">{{ tree.sizeGrowthHabit }}</div>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
 
 <script>
 
-import treesService from "../services/TreesService"
-
 export default {
-  data() {
-    return {
-      review: {
-        user_id: '',      // You can set this later when you have user data
-        brew_id: '',      // Will be populated with the brewery ID
-        beer_id: '',      // Will be populated with the selected beer ID
-        beerName: '',          // The user's name (if needed)
-        rating: '',
-        review: '',
-        image: '',
-      },
-      reviews: [],
-      filteredReviews: [],
-      
-    };
+  props: {
+    trees: Array, // Pass the breweries array as a prop
   },
 
-  created() {
-    treesService
-      .getReviews()
-      .then(response => {
-        if (response.status == 200) {
-          this.reviews = response.data;
-          this.$store.commit('SET_REVIEWS', response.data);
-        }
-      })
-      .catch(error => {
-        const response = error.response;
-        if (response.status === 401) {
-          this.invalidCredentials = true;
-        }
-      });
-  },
+  computed: {
+        returnTrees() {
+          return this.trees;
+        },
+        // filteredBeers() {
+        //     return this.beersList.filter(beer => beer.beer_Id == this.beer_id);
+        // },
+    },
 
   methods: {
     displayAverageRating(beerId) {
@@ -100,8 +77,7 @@ h1 {
   font-weight: bolder;
   margin: 0;
   padding: 20px 0;
-  /* background-image: url('../assets/img/beerstar.png'); */
-  background-color:  cadetblue;
+  background-color:  rgb(96, 137,119);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -109,7 +85,7 @@ h1 {
   font-size: 4rem;
   /* Increase the font size */
 }
-.beers-list {
+.tree-list {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
@@ -118,7 +94,7 @@ h1 {
   margin-left: 1rem;
 }
 
-.beer-card {
+.tree-card {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 1px solid #080808;
   padding: 10px;
@@ -135,7 +111,7 @@ h1 {
   /* Additional gold shadow */
 }
 
-.beer-image-container {
+.tree-image-container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 10px;
   /* width: 100%; */
@@ -143,7 +119,7 @@ h1 {
   height: 300px;
 }
 
-.beer-image {
+.tree-image {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   /* max-width: 100%;
   height: auto;
@@ -152,7 +128,7 @@ h1 {
   height: 300px;
 }
 
-.beer-info {
+.tree-info {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
@@ -179,9 +155,9 @@ h3 {
   color: white;
   border-style: solid;
   border-width: 1px;
-  border-left: cadetblue;
-  border-top: cadetblue;
-  border-right: cadetblue;
+  border-left: rgb(96, 137,119);
+  border-top: rgb(96, 137,119);
+  border-right: rgb(96, 137,119);
 }
 
 #subset {
@@ -202,9 +178,9 @@ h3 {
 .spacer {
   border-style: solid;
   border-width: 1px;
-  border-bottom: cadetblue;
-  border-top: cadetblue;
-  border-right: cadetblue;
+  border-bottom: rgb(96, 137,119);
+  border-top: rgb(96, 137,119);
+  border-right: rgb(96, 137,119);
 }
 
 .topspacer {
@@ -212,9 +188,9 @@ h3 {
   margin-bottom: 1rem;
   border-style: solid;
   border-width: 1px;
-  border-bottom: cadetblue;
-  border-left: cadetblue;
-  border-right: cadetblue;
+  border-bottom: rgb(96, 137,119);
+  border-left: rgb(96, 137,119);
+  border-right: rgb(96, 137,119);
 }
 
 .nav {

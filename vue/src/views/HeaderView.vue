@@ -7,7 +7,7 @@
       <div class="nav">
         <router-link v-bind:to="{ name: 'home' }" class="nav-link">HOME</router-link>
         <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'home' }" class="nav-link">TREES</router-link>
+        <router-link v-bind:to="{ name: 'trees' }" class="nav-link">TREES</router-link>
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'home' }" class="nav-link">ABOUT US</router-link>
         <div class="spacer"></div>
@@ -62,7 +62,7 @@ img {
 h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
-  color: rgb(96, 137,119);;
+  color: rgb(96, 137,119);
   /* color:rgb(174, 161, 117); */
   font-size: 6rem;
   background-color:rgb(174, 161, 117);

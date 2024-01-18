@@ -3,12 +3,12 @@
     <div class="slideshow-container">
       <div class="featured-section">
         <h1>Featured Trees</h1>
-        <!-- <BrewerySlideshow :breweries="sixRandom" /> -->
+        <treeSlideshow :trees="sixRandom" />
       </div>
-      <div class="beer-section">
+      <!-- <div class="beer-section">
         <h1>Featured Products</h1>
-        <!-- <BeerSlideshow :beers="featuredBeers" /> -->
-      </div>
+        <BeerSlideshow :beers="featuredBeers" />
+      </div> -->
     </div>
     <div class="about-box">
       <p>
@@ -22,6 +22,7 @@
 
 <script>
 import treesService from "../services/TreesService";
+import treeSlideshow from "../components/TreeSlideshow.vue";
 
 export default {
   data() {
@@ -36,7 +37,7 @@ export default {
       .then(response => {
         if (response.status == 200) {
           this.sixRandom = response.data.sort(() => Math.random() - 0.5).slice(0, 6);
-          this.$store.commit('SET_Trees', response.data);
+          this.$store.commit('SET_TREES', response.data);
         }
       })
       .catch(error => {
@@ -48,8 +49,7 @@ export default {
 
   },
   components: {
-    // BrewerySlideshow,
-    // BeerSlideshow,
+    treeSlideshow
   },
 };
 </script>
