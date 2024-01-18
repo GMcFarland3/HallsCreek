@@ -2,7 +2,7 @@
   <div>
     <section class="tree-list">
       <div><h1>Trees</h1></div>
-      <!-- <div v-for="(tree) in returnTrees" :key="tree.treeId" class="tree-card">
+      <div v-for="tree in returnTrees" :key="tree.treeId" class="tree-card">
         <div class="tree-image-container">
           <img :src="tree.image" alt="tree" class="tree-image" />
         </div>
@@ -12,15 +12,34 @@
           <div id="subset">
             <div class="details">{{ tree.leaf }}</div>
             <div class="spacer"></div>
-            <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div>
+            <!-- <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div> -->
+            <div class="details">Expected life of {{ tree.lifespan }}</div>
             <div class="spacer"></div>
-            <div class="details">{{ tree.uses }} abv</div>
+            <div class="details">{{ tree.uses }}</div>
           </div>
           <div class="topspacer"></div>
-          <router-link :to="'/reviews/' + tree.treeId" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
           <div class="details">{{ tree.sizeGrowthHabit }}</div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.color }}</div>
+            <div class="spacer"></div>
+            <div class="details">Bloom time of {{ tree.bloomTime }}</div>
+            <div class="spacer"></div>
+            <div class="details">{{ tree.lightRequirement }}</div>
+          </div>
+          <div class="topspacer"></div>
+          <div class="details">{{ tree.pestDisease }}</div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.wateringNeeds }}</div>
+            <div class="spacer"></div>
+            <div class="details">Zone {{ tree.hardinessZone }} of {{ tree.origin }}</div>
+            <div class="spacer"></div>
+            <div class="details">{{ tree.soil }}</div>
+          </div>
+          <router-link :to="'/reviews/' + tree.treeId" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
         </div>
-      </div> -->
+      </div>
     </section>
   </div>
 </template>
@@ -28,17 +47,11 @@
 <script>
 
 export default {
-  props: {
-    trees: Array, // Pass the breweries array as a prop
-  },
 
   computed: {
         returnTrees() {
-          return this.trees;
+          return this.$store.state.trees;
         },
-        // filteredBeers() {
-        //     return this.beersList.filter(beer => beer.beer_Id == this.beer_id);
-        // },
     },
 
   methods: {
@@ -92,6 +105,7 @@ h1 {
   /* flex-wrap: wrap; */
   gap: 20px;
   margin-left: 1rem;
+  background-color:  rgb(96, 137,119);
 }
 
 .tree-card {
@@ -107,7 +121,7 @@ h1 {
 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
     /* Existing shadow */
-    0px 0px 10px darkorange;
+    0px 0px 10px rgb(174, 161, 117);
   /* Additional gold shadow */
 }
 
@@ -141,7 +155,8 @@ h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 0;
   padding-top: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
   color: white;
   font-weight: bold;
   font-size: 2.5rem;
@@ -217,15 +232,14 @@ h3 {
     border: 1px solid gray;
     padding: 0px 2px 0px 4px;
     border-radius: 5px;
-    background-color: darkorange;
+    background-color: rgb(174, 161, 117);
     margin: 0px 0px 0px 0px;
 }
 
 .nav-link:hover {
-    color: darkorange;
-    background-color: gray;
+    color: rgb(12, 12, 12);
+    background-color: rgb(253, 225, 132);
     /* Change text color on hover */
     /* Add additional styling for the hover effect, e.g., background color change */
 }
 </style>
-../services/TreesService
