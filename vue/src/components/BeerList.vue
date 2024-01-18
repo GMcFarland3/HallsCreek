@@ -27,7 +27,12 @@
 
 <script>
 
+<<<<<<< HEAD
 import treesService from "../services/TreesService"
+=======
+
+
+>>>>>>> a9fe8987cadf65cd26f7ba0e15dc322bc9b789e5
 export default {
   data() {
     return {

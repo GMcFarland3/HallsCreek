@@ -17,7 +17,12 @@ import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
 import BreweryInfo from '../components/BreweryInfo.vue';
 import BeerList from '../components/BeerList.vue';
+<<<<<<< HEAD
 import treesService from "../services/TreesService"
+=======
+
+
+>>>>>>> a9fe8987cadf65cd26f7ba0e15dc322bc9b789e5
 
 export default {
     data() {
