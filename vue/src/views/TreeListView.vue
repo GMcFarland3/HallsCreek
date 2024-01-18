@@ -3,7 +3,7 @@
         <HeaderView />
         <section >
             <div>
-                <TreeList />
+                <TreeList :treeId="treeId" />
             </div>
         </section>
         <FooterView />
@@ -14,7 +14,6 @@
 import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
 import TreeList from '../components/TreeList.vue';
-
 
 export default {
     data() {
@@ -38,4 +37,4 @@ FooterView {
     position: fixed;
     bottom: 0;
 }
-</style>../services/TreesService
+</style>

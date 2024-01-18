@@ -6,7 +6,6 @@ INSERT INTO users (username,password_hash,role) VALUES ('jack','$2a$10$xVN8wyDaN
 
 COMMIT;
 
-
 BEGIN TRANSACTION;
 
 INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
