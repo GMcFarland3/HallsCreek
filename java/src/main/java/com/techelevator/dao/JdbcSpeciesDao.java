@@ -20,7 +20,7 @@ public class JdbcSpeciesDao implements SpeciesDao {
     @Override
     public List<Species> listSpecies() {
         List<Species> speciesList = new ArrayList<>();
-        String sql = "SELECT species_id, common_name, scientific_name, color, bloom_time, size_growth_habit FROM species ORDER BY common_name;";
+        String sql = "SELECT speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit FROM species ORDER BY commonName;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
@@ -80,12 +80,12 @@ public class JdbcSpeciesDao implements SpeciesDao {
 
     private Species mapRowToSpecies(SqlRowSet rs) {
         Species species = new Species();
-        species.setSpeciesId(rs.getInt("species_id"));
-        species.setCommonName(rs.getString("common_name"));
-        species.setScientificName(rs.getString("scientific_name"));
+        species.setSpeciesId(rs.getInt("speciesId"));
+        species.setCommonName(rs.getString("commonName"));
+        species.setScientificName(rs.getString("scientificName"));
         species.setColor(rs.getString("color"));
-        species.setBloomTime(rs.getString("bloom_time"));
-        species.setSizeGrowthHabit(rs.getString("size_growth_habit"));
+        species.setBloomTime(rs.getString("bloomTime"));
+        species.setSizeGrowthHabit(rs.getString("sizeGrowthHabit"));
         return species;
     }
 }

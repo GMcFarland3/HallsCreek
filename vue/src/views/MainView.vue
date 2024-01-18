@@ -1,20 +1,16 @@
 <template>
   <div class="home-container">
-    <div class="slideshow-container">
+
       <div class="featured-section">
         <h1>Featured Trees</h1>
-        <treeSlideshow :trees="sixRandom" />
+        <treeSlideshow :trees="treeslide" />
       </div>
-      <!-- <div class="beer-section">
-        <h1>Featured Products</h1>
-        <BeerSlideshow :beers="featuredBeers" />
-      </div> -->
-    </div>
+
     <div class="about-box">
       <p>
-        Welcome to Hall's Creek Tree Farm.  The best place to accquire trees for your next landscaping project. Improve your
+        Welcome to Hall's Creek Tree Farm.  The best place to acquire trees for your next landscaping project. Improve your
         curb appeal with beautiful trees from our local farm.  Expert employees will help every step of the way, from selecting
-        the proper tree to installation.  We pride exceeding your expections.  Give us a chance to earn your business.
+        the proper tree to installation.  We pride exceeding your exceptions.  Give us a chance to earn your business.
       </p>
     </div>
   </div>
@@ -27,8 +23,7 @@ import treeSlideshow from "../components/TreeSlideshow.vue";
 export default {
   data() {
     return {
-      sixRandom: [],
-      featuredBeers: [],
+      treeslide: [],
     };
   },
   created() {
@@ -36,7 +31,7 @@ export default {
       .getTrees()
       .then(response => {
         if (response.status == 200) {
-          this.sixRandom = response.data.sort(() => Math.random() - 0.5).slice(0, 6);
+          this.treeslide = response.data;
           this.$store.commit('SET_TREES', response.data);
         }
       })
@@ -56,6 +51,7 @@ export default {
 
 <style scoped>
 .home-container {
+  background-image: url("../assets/img/background.jpg");
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -63,19 +59,15 @@ export default {
   align-items: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
   background-color:rgb(96, 137,119);
 }
 
-.featured-section,
-.beer-section {
+.featured-section {
   width: calc(50% - 10px);
   object-fit: contain;
 }
 
-.featured-section h1,
-.beer-section h1 {
+.featured-section h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2.5rem;
   color: whitesmoke;
@@ -83,30 +75,12 @@ export default {
   text-align: center;
 }
 
-.slideshow-container {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-around; */
-  justify-content: space-evenly;
-  object-fit: contain;
-  gap: 20px;
-  position: relative;
-  /* Set parent container to relative positioning */
-  z-index: 1;
-  /* Ensure the slideshow is above other elements */
 
-  /* Adjust the height of the slideshow area */
-  margin-bottom: 50px;
-}
 
-.featured-section,
-.beer-section {
+.featured-section{
   width: calc(50% - 10px);
   z-index: 2;
-  /* Ensure the slideshows are above the "About Us" box */
   height: 100%;
-  /* Fill the entire height of the slideshow area */
   margin-bottom: 50px;
 }
 

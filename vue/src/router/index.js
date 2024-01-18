@@ -21,6 +21,14 @@ const routes = [
       requiresAuth: false
     }
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminView,
+    meta: {
+      requiresAuth: false
+    }
+  },
 
   {
     path: '/trees',

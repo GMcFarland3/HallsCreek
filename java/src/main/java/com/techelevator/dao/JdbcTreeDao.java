@@ -35,9 +35,9 @@ public class JdbcTreeDao implements TreeDao {
 
     @Override
     public void addTree(Tree tree) {
-        String sql = "INSERT INTO trees (species_id) VALUES (?);";
+        String sql = "INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
-            jdbcTemplate.update(sql, tree.getSpeciesId());
+            jdbcTemplate.update(sql, tree.getSpeciesId(), tree.getCommonName(), tree.getScientificName(), tree.getColor(), tree.getBloomTime(), tree.getSizeGrowthHabit(), tree.getHardinessZone(), tree.getLightRequirement(), tree.getWateringNeeds(), tree.getSoil(), tree.getLeaf(), tree.getSpecial(), tree.getLifespan(), tree.getMaintenance(), tree.getUses(), tree.getPestDisease(), tree.getOrigin(), tree.getImage());
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }

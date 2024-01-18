@@ -16,8 +16,6 @@ import MainView from "@/views/MainView.vue";
 import HeaderView from "@/views/HeaderView.vue";
 import FooterView from "@/views/FooterView.vue";
 
-
-
 export default {
   created() {
 

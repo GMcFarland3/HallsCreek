@@ -1,33 +1,71 @@
 <template>
+  <div class="header">
+  <header-view />
+  </div>
+
+
 <div class="page">
-    <div>
-        <header-view />
-        <div class="mainview">
-        <div class="addBrewery">
-            <h3>Add Brewery</h3>
-            <form @submit.prevent="addBrewery"> <!-- Call addBrewery on form submission -->
-                <!-- <div>
-                    <label for="breweryId">Brewery Id => </label>
-                    <input type="number" id="breweryId" v-model="brewery.brew_id">
-                </div> -->
-                <div>
-                    <label for="userId">User Id => </label>
-                    <input type="number" id="userId" v-model="brewery.user_id" required>
-                </div>
-                <div>
-                    <label for="breweryName">Brewery Name => </label>
-                    <input type="text" id="breweryName" v-model="brewery.name" required>
-                </div>
-                <div class="submit">
-                    <button type="submit">Add Brewery</button>
-                </div>
-            </form>
-            <div class="completion-message" :class="{ 'show-message': showMessage }">
-                {{ messageText }}
-            </div>
-        </div>
-    </div>
-    
+  <div class="content-container">
+  <div class="newtree">
+    <form @submit.prevent="submitTree">
+
+      <label for="speciesId">speciesId:</label>
+      <input id="speciesId" v-model="newTree.speciesId" required>
+
+      <label for="commonName">Common Name:</label>
+      <input id="commonName" v-model="newTree.commonName" required>
+
+      <label for="scientificName">Scientific Name:</label>
+      <input id="scientificName" v-model="newTree.scientificName" required>
+
+      <label for="color">Color:</label>
+      <input id="color" v-model="newTree.color">
+
+      <label for="bloomTime">Bloom Time:</label>
+      <input id="bloomTime" v-model="newTree.bloomTime">
+
+      <label for="sizeGrowthHabit">Size and Growth Habit:</label>
+      <input id="sizeGrowthHabit" v-model="newTree.sizeGrowthHabit">
+
+      <label for="hardinessZone">Hardiness Zone:</label>
+      <input id="hardinessZone" v-model="newTree.hardinessZone">
+
+      <label for="lightRequirement">Light Requirement:</label>
+      <input id="lightRequirement" v-model="newTree.lightRequirement">
+
+      <label for="wateringNeeds">Watering Needs:</label>
+      <input id="wateringNeeds" v-model="newTree.wateringNeeds">
+
+      <label for="soil">Soil:</label>
+      <input id="soil" v-model="newTree.soil">
+
+      <label for="leaf">Leaf:</label>
+      <input id="leaf" v-model="newTree.leaf">
+
+      <label for="special">Special Features:</label>
+      <input id="special" v-model="newTree.special">
+
+      <label for="lifespan">Lifespan:</label>
+      <input id="lifespan" v-model="newTree.lifespan">
+
+      <label for="maintenance">Maintenance:</label>
+      <input id="maintenance" v-model="newTree.maintenance">
+
+      <label for="uses">Uses:</label>
+      <input id="uses" v-model="newTree.uses">
+
+      <label for="pestDisease">Pests/Diseases:</label>
+      <input id="pestDisease" v-model="newTree.pestDisease">
+
+      <label for="origin">Origin:</label>
+      <input id="origin" v-model="newTree.origin">
+
+      <label for="image">Image URL:</label>
+      <input type="url" id="image" v-model="newTree.image">
+
+      <button type="submit">Add Tree</button>
+    </form>
+  </div>
 
     <div class="RegUsers">
         <h3>All Registered Users</h3>
@@ -35,233 +73,156 @@
             <li v-for="user in userList" :key="user.id" value="user">{{ user.username }} : {{ user.id }}</li>
         </ul>
     </div>
+    <div class="Species">
+        <h3>All Species</h3>
+        <ul>
+            <li v-for="species in speciesList" :key="species.id" value="species">{{ species.commonName }} : {{ species.speciesId }}</li>
+        </ul>
+  </div>
+  </div>
 </div>
 
 
+  <div class="footer">
         <FooterView />
     </div>
 </template>
 <script>
 import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
-import treesService from "../services/TreesService"
 import UserService from "../services/UserService";
+import TreesService from "../services/TreesService";
 
 export default {
-    data() {
-        return {
-            brewery: {
-                brew_id: '',
-                user_id: '',
-                name: '',
-                address: '',
-                address2: '',
-                city: '',
-                state_abbr: '',
-                zip_code: '',
-                phone: '',
-                website: '',
-                history: '',
-                operation_hours: '',
-                image: ''
-            },
-            userList: [],
-            selectedUserId: "",
-            messageText: '', // Add selectedUserId data property
-            showMessage: false, // Add a data property to control the completion message
-        };
-    },
+  data() {
+    return {
+      newTree: [{
+        treeId: '',
+        speciesId: '',
+        commonName: '',
+        scientificName: '',
+        color: '',
+        bloomTime: '',
+        sizeGrowthHabit: '',
+        hardinessZone: '',
+        lightRequirement: '',
+        wateringNeeds: '',
+        soil: '',
+        leaf: '',
+        special: '',
+        lifespan: '',
+        maintenance: '',
+        uses: '',
+        pestDisease: '',
+        origin: '',
+        image: ''
+      }],
+      userList: [],
+      speciesList: [],
+      selectedUserId: "",
+      messageText: '', // Add selectedUserId data property
+      showMessage: false, // Add a data property to control the completion message
+    };
+  },
+  components: {
+    HeaderView,
+    FooterView
+  },
 
-    methods: {
-        submitForm() {
-
-            // Call addBrewery method when the form is submitted
-            this.addBrewery();
-        },
-
-        addBrewery() {
-            treesService
-                .addBrewery(this.brewery)
-                .then((response) => {
-                    if (response.status == 201) {
-                        this.showCompletionMessage("Brewery added successfully!");
-                        // Show completion message on successful addition
-                    }
-                })
-                .catch((error) => {
-                    const response = error.response;
-                    if (response.status === 401) {
-                        // Handle error scenarios as needed
-                        console.error("Error adding brewery:", error);
-                    }
-                });
-        },
-
-        showCompletionMessage(message) {
-            this.showMessage = true;
-            this.messageText = message;
-
-            // Hide the message after 3 seconds (adjust duration as needed)
-            setTimeout(() => {
-                this.showMessage = false;
-            }, 3000);
-        }
-
-    },
-    components: {
-        HeaderView,
-        FooterView,
-    },
+  methods: {
+    submitTree() {
+      TreesService.addTree(this.newTree)
+          .then(response => {
+            if (response.status === 200 || response.status === 201) {
+              console.log('Tree added successfully:', response.data);
+              this.newTree = {};
+            } else {
+              console.warn('Tree added, but status code is unexpected:', response.status);
+            }
+          })
+          .catch(error => {
+            console.error('Error adding tree:', error);
+          });
+    }
+  },
 
     created() {
-        UserService
-            .getUsers()
-            .then((response) => {
-                console.log("API Response:", response.data); // Log the response data
-                if (response.status == 200) {
-                    this.userList = response.data;
-                    console.log("User List:", this.userList); // Log the user list
-                    this.$store.commit("SET_USERS", response.data);
-                }
-            })
-            .catch((error) => {
-                console.error("Error fetching users:", error);
-            });
-    },
+      UserService
+          .getUsers()
+          .then((response) => {
+            console.log("API Response:", response.data); // Log the response data
+            if (response.status == 200) {
+              this.userList = response.data;
+              console.log("User List:", this.userList); // Log the user list
+              this.$store.commit("SET_USERS", response.data);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching users:", error);
+          });
 
-};
+      TreesService
+          .getSpecies()
+          .then((response) => {
+            console.log("API Response:", response.data); // Log the response data
+            if (response.status == 200) {
+              this.speciesList = response.data;
+              console.log("Species List:", this.speciesList); // Log the species list
+              this.$store.commit("SET_SPECIES", response.data);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching species:", error);
+          });
+    },
+  };
 
 </script>
 
 <style scoped>
+
 .page {
-  /* background-image: url('../assets/img/homePage2.png'); */
-  background-color:  cadetblue;
-  background-size: cover;
+  background-image: url("../assets/img/admin.JPG");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-}
-.completion-message {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: gold;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(7, 7, 7, 0.9);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none;
+  background-size: cover;
 }
 
-.show-message {
-    display: block;
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-
-button:hover {
-    background-color: black;
-    /* color: rgb(238, 211, 4); */
-}
-
-.addBrewery {
+.newtree {
   background-color: white;
   border-radius: 8px;
   border: 1px solid darkorange;
-  /* Box shadow for a slight lift effect */
   box-shadow: darkorange 2px 2px 2px 2px;
-  transition: transform 0.3s ease-in-out;
-
-    padding: 2px 2px 15px 2px;
-    margin: 10px 10px 10px 10px;
-    width: 25%;
-    margin-top: 50px;
+  padding: 2px 2px 15px 2px;
+  width: 20rem; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 50px;
 }
 
-.addBeer {
-    border-style: groove;
-    padding: 2px 2px 15px 2px;
-    margin: 5px 0px 5px 0px;
-}
-
-.brewery-card:hover {
-  transform: translateY(-5px); /* Add a slight lift on hover */
-}
-
-.RegUsers {
+.RegUsers, .Species {
   background-color: white;
   border-radius: 8px;
   border: 1px solid darkorange;
-  /* Box shadow for a slight lift effect */
   box-shadow: darkorange 2px 2px 2px 2px;
-  transition: transform 0.3s ease-in-out;
-
-    padding: 2px 2px 15px 2px;
-    margin: 10px 10px 10px 10px;
-    width: 25%;
-    margin-bottom: 50px;
-    margin-top: 10px;
+  padding: 2px 2px 15px 2px;
+  width: auto; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 50px;
 }
 
-.UpdateUsers {
-    border-style: groove;
-    padding: 2px 2px 15px 2px;
-    margin: 5px 0px 5px 0px;
-}
-
-.DelUsers {
-    border-style: groove;
-    padding: 2px 2px 15px 2px;
-    margin: 5px 0px 5px 0px;
-}
-
-h3 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 10px;
-    padding-left: 10px;
-}
-
-label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: inline-block;
-    text-align: left;
-    padding-left: 5px;
-    width: 180px;
+h3, label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-left: 5px;
-    width: 400px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
 }
 
-select {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-left: 5px;
-    width: 400px;
-}
 
-option {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-left: 5px;
-    width: 400px;
-}
-
-button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    color: white;
-    margin-right: 20px;
-    transition: color 0.3s;
-    border: 1px solid gray;
-    padding: 8px 15px;
-    border-radius: 5px;
-    background-color: darkorange;
-}
-</style>../services/TreesService
+</style>

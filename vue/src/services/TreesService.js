@@ -9,5 +9,8 @@ export default {
     getSpecies() {
         return axios.get('/species')
     },
+    addTree(treeData) {
+        return axios.post('/addtree', treeData)
+    }
 
 }

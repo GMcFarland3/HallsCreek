@@ -89,7 +89,7 @@ export function createStore(currentToken, currentUser) {
         state.trees = trees;
       },
       SET_SPECIES(state, species) {
-        state.beers = species;
+        state.species = species;
       },
       SET_REVIEWS(state, reviews) {
         state.reviews = reviews;
@@ -98,17 +98,6 @@ export function createStore(currentToken, currentUser) {
         state.users = users;
       },
     },
-    actions: {
-      fetchTrees({commit}) {
-        axios.get('/trees')
-            .then(response => {
-              commit('SET_TREES', response.data);
-            })
-            .catch(error => {
-              console.error('Error fetching trees:', error);
-            });
-      },
-    }
   });
   return store;
 }
