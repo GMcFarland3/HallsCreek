@@ -10,35 +10,35 @@
           <h3>{{ tree.commonName }}</h3>
           <div id="description">{{ tree.scientificName }}</div>
           <div id="subset">
-            <div class="details">[Leaf] {{ tree.leaf }}</div>
+            <div class="details">[LEAF] {{ tree.leaf }}</div>
             <div class="spacer"></div>
             <!-- <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div> -->
-            <div class="details">[Expected life] {{ tree.lifespan }}</div>
+            <div class="details">[EXPECTED LIFE] {{ tree.lifespan }}</div>
             <div class="spacer"></div>
-            <div class="details">[Uses] {{ tree.uses }}</div>
+            <div class="details">[USES] {{ tree.uses }}</div>
           </div>
           <div class="topspacer"></div>
           <div class="details">{{ tree.sizeGrowthHabit }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">[Color] {{ tree.color }}</div>
+            <div class="details">[COLOR] {{ tree.color }}</div>
             <div class="spacer"></div>
-            <div class="details">[Bloom time] {{ tree.bloomTime }}</div>
+            <div class="details">[BLOOM TIME] {{ tree.bloomTime }}</div>
             <div class="spacer"></div>
-            <div class="details">[Sun] {{ tree.lightRequirement }}</div>
+            <div class="details">[SUN] {{ tree.lightRequirement }}</div>
           </div>
           <div class="topspacer"></div>
           <div class="details">{{ tree.pestDisease }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">[Watering] {{ tree.wateringNeeds }}</div>
+            <div class="details">[WATERING] {{ tree.wateringNeeds }}</div>
             <div class="spacer"></div>
-            <div class="details">Zone {{ tree.hardinessZone }} of {{ tree.origin }}</div>
+            <div class="details">[ZONE] {{ tree.hardinessZone }} of {{ tree.origin }}</div>
             <div class="spacer"></div>
-            <div class="details">[Soil] {{ tree.soil }}</div>
+            <div class="details">[SOIL] {{ tree.soil }}</div>
           </div>
           <div class="topspacer"></div>
-          <router-link :to="'/reviews/' + tree.treeId" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
+          <router-link :to="'/selectedtree/' + tree.treeId" class="nav-link">Click here for more information and pricing</router-link>
         </div>
       </div>
     </section>
@@ -48,7 +48,6 @@
 <script>
 
 export default {
-
   computed: {
         returnTrees() {
           return this.$store.state.trees;

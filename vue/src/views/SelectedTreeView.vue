@@ -3,7 +3,7 @@
         <HeaderView />
         <section >
             <div>
-                <TreeList :treeId="treeId" />
+                <SelectedTree :treeId="treeId"  />
             </div>
         </section>
         <FooterView />
@@ -13,17 +13,23 @@
 <script>
 import HeaderView from './HeaderView.vue';
 import FooterView from './FooterView.vue';
-import TreeList from '../components/TreeList.vue';
+import SelectedTree from '../components/SelectedTree.vue';
+
 
 export default {
     data() {
         return {
         }
     },
-
+    props: {
+        treeId: {
+            type: Number,
+            required: true
+        }
+    },
     components: {
         HeaderView,
-        TreeList,
+        SelectedTree,
         FooterView
     },
 }

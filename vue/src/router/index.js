@@ -4,12 +4,11 @@ import { useStore } from 'vuex'
 // Import components
 import HomeView from '../views/HomeView.vue';
 import TreeListView from '../views/TreeListView.vue';
+import SelectedTreeView from '../views/SelectedTreeView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import AdminView from '../views/AdminView.vue';
-
-
 
 // Define routes
 const routes = [
@@ -30,6 +29,17 @@ const routes = [
       requiresAuth: false
     }
   },
+
+  {
+    path: '/selectedtree/:treeId',
+    name: 'selectedtree',
+    component: SelectedTreeView,
+    props: true,
+    meta: {
+      requiresAuth: false
+    }
+  },
+
   {
     path: '/admin',
     name: 'admin',
