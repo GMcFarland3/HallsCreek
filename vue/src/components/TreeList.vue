@@ -10,33 +10,34 @@
           <h3>{{ tree.commonName }}</h3>
           <div id="description">{{ tree.scientificName }}</div>
           <div id="subset">
-            <div class="details">{{ tree.leaf }}</div>
+            <div class="details">[Leaf] {{ tree.leaf }}</div>
             <div class="spacer"></div>
             <!-- <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div> -->
-            <div class="details">Expected life of {{ tree.lifespan }}</div>
+            <div class="details">[Expected life] {{ tree.lifespan }}</div>
             <div class="spacer"></div>
-            <div class="details">{{ tree.uses }}</div>
+            <div class="details">[Uses] {{ tree.uses }}</div>
           </div>
           <div class="topspacer"></div>
           <div class="details">{{ tree.sizeGrowthHabit }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ tree.color }}</div>
+            <div class="details">[Color] {{ tree.color }}</div>
             <div class="spacer"></div>
-            <div class="details">Bloom time of {{ tree.bloomTime }}</div>
+            <div class="details">[Bloom time] {{ tree.bloomTime }}</div>
             <div class="spacer"></div>
-            <div class="details">{{ tree.lightRequirement }}</div>
+            <div class="details">[Sun] {{ tree.lightRequirement }}</div>
           </div>
           <div class="topspacer"></div>
           <div class="details">{{ tree.pestDisease }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ tree.wateringNeeds }}</div>
+            <div class="details">[Watering] {{ tree.wateringNeeds }}</div>
             <div class="spacer"></div>
             <div class="details">Zone {{ tree.hardinessZone }} of {{ tree.origin }}</div>
             <div class="spacer"></div>
-            <div class="details">{{ tree.soil }}</div>
+            <div class="details">[Soil] {{ tree.soil }}</div>
           </div>
+          <div class="topspacer"></div>
           <router-link :to="'/reviews/' + tree.treeId" class="nav-link">Click here to read review(s) and/or leave a review</router-link>
         </div>
       </div>
@@ -84,27 +85,29 @@ export default {
 <style scoped>
 
 h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
+  font-family: 'IM Fell English', serif;
   text-align: left;
-  font-weight: bolder;
-  margin: 0;
-  padding: 20px 0;
-  background-color:  rgb(96, 137,119);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  font-size: 4rem;
-  /* Increase the font size */
+  color: rgb(96, 137,119);
+  font-size: 3rem;
+  background-color:rgb(174, 161, 117);
+  border-top-right-radius: 75px;
+  border-bottom-right-radius: 75px;
+  box-shadow: 10px 10px 2px 1px rgb(204, 204, 204);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
+  width: 20rem;
 }
+
 .tree-list {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   /* flex-wrap: wrap; */
   gap: 20px;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   background-color:  rgb(96, 137,119);
 }
 
@@ -112,17 +115,15 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 1px solid #080808;
   padding: 10px;
-  width: 80rem;
-  height: 350px;
+  width: 90rem;
+  height: 400px;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
-
+  margin-left: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-    /* Existing shadow */
     0px 0px 10px rgb(174, 161, 117);
-  /* Additional gold shadow */
 }
 
 .tree-image-container {
