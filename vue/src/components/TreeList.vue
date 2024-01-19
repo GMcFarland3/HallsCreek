@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="tree-list">
-      <div><h1>Trees</h1></div>
+      <div><h1>Catalog</h1></div>
       <div v-for="tree in returnTrees" :key="tree.treeId" class="tree-card">
         <div class="tree-image-container">
           <img :src="tree.image" alt="tree" class="tree-image" />
@@ -98,9 +98,9 @@ export default {
 h1 {
   font-family: 'IM Fell English', serif;
   text-align: left;
-  color: rgb(96, 137,119);
+  color: rgb(95, 136, 118);
   font-size: 3rem;
-  background-color:rgb(174, 161, 117);
+  background-color: rgb(173, 160, 116);
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgb(204, 204, 204);
@@ -117,7 +117,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color:  rgb(96, 137,119);
+  background-color: rgb(95, 136, 118);
 }
 
 .tree-card {
@@ -132,7 +132,7 @@ h1 {
   text-align: center;
   margin-left: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-    0px 0px 10px rgb(174, 161, 117);
+    0px 0px 10px rgb(173, 160, 116);
 }
 
 .tree-image-container {
@@ -195,9 +195,9 @@ h3 {
 .spacer {
   border-style: solid;
   border-width: 1px;
-  border-bottom: rgb(96, 137,119);
-  border-top: rgb(96, 137,119);
-  border-right: rgb(96, 137,119);
+  border-bottom: rgb(95, 136, 118);
+  border-top: rgb(96, 136,118);
+  border-right: rgb(96, 136,118);
 }
 
 .topspacer {
@@ -205,9 +205,9 @@ h3 {
   margin-bottom: 1rem;
   border-style: solid;
   border-width: 1px;
-  border-bottom: rgb(96, 137,119);
-  border-left: rgb(96, 137,119);
-  border-right: rgb(96, 137,119);
+  border-bottom: rgb(96, 136,118);
+  border-left: rgb(96, 136,118);
+  border-right: rgb(96, 136,118);
 }
 
 </style>

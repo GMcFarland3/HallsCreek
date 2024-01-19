@@ -15,8 +15,8 @@ h3 {
     font-family: 'IM Fell English', serif;
     text-align: center;
     font-size: 1.75em;
-    color:rgb(174, 161, 117);
-    background-color: rgb(96, 137,119);
+    color: rgb(173, 160, 116);
+    background-color: rgb(95, 136, 118);
     height: 3rem;
     margin: 0 0 0 0;
     padding-top: 0.5rem;

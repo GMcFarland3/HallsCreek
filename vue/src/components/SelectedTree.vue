@@ -64,9 +64,9 @@
   h1 {
     font-family: 'IM Fell English', serif;
     text-align: left;
-    color: rgb(96, 137,119);
+    color: rgb(95, 136, 118);
     font-size: 3rem;
-    background-color:rgb(174, 161, 117);
+    background-color: rgb(173, 160, 116);
     border-top-right-radius: 75px;
     border-bottom-right-radius: 75px;
     box-shadow: 10px 10px 2px 1px rgb(204, 204, 204);
@@ -83,7 +83,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color:  rgb(96, 137,119);
+    background-color: rgb(95, 136, 118);
   }
   
   .tree-card {
@@ -98,7 +98,7 @@
     text-align: center;
     margin-left: 1rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-      0px 0px 10px rgb(174, 161, 117);
+      0px 0px 10px rgb(173, 160, 116);
   }
   
   .tree-image-container {
@@ -146,9 +146,9 @@
     color: white;
     border-style: solid;
     border-width: 1px;
-    border-left: rgb(96, 137,119);
-    border-top: rgb(96, 137,119);
-    border-right: rgb(96, 137,119);
+    border-left: rgb(95, 136, 118);
+    border-top: rgb(95, 136, 118);
+    border-right: rgb(95, 136, 118);
   }
   
   #subset {
@@ -169,9 +169,9 @@
   .spacer {
     border-style: solid;
     border-width: 1px;
-    border-bottom: rgb(96, 137,119);
-    border-top: rgb(96, 137,119);
-    border-right: rgb(96, 137,119);
+    border-bottom: rgb(95, 136, 118);
+    border-top: rgb(95, 136, 118);
+    border-right: rgb(95, 136, 118);
   }
   
   .topspacer {
@@ -179,9 +179,9 @@
     margin-bottom: 1rem;
     border-style: solid;
     border-width: 1px;
-    border-bottom: rgb(96, 137,119);
-    border-left: rgb(96, 137,119);
-    border-right: rgb(96, 137,119);
+    border-bottom: rgb(95, 136, 118);
+    border-left: rgb(95, 136, 118);
+    border-right: rgb(95, 136, 118);
   }
   
   .nav {
@@ -208,13 +208,13 @@
       border: 1px solid gray;
       padding: 0px 2px 0px 4px;
       border-radius: 5px;
-      background-color: rgb(174, 161, 117);
+      background-color: rgb(173, 160, 116);
       margin: 0px 0px 0px 0px;
   }
   
   .nav-link:hover {
       color: rgb(12, 12, 12);
-      background-color: rgb(253, 225, 132);
+      background-color: rgb(173, 160, 116);
       /* Change text color on hover */
       /* Add additional styling for the hover effect, e.g., background color change */
   }

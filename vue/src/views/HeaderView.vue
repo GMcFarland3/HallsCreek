@@ -2,16 +2,14 @@
     <div class="header">
       <div class="logo"><img src="../assets/img/Logo.png" alt="Missing file"></div>
       <div class="brand">
-        <h1>Hall's Creek Tree Farm</h1>
+        <h1>Halls Creek Nursery</h1>
       </div>
       <div class="nav">
         <router-link v-bind:to="{ name: 'home' }" class="nav-link">HOME</router-link>
         <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'trees' }" class="nav-link">TREES</router-link>
+        <router-link v-bind:to="{ name: 'trees' }" class="nav-link">CATALOG</router-link>
         <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'home' }" class="nav-link">ABOUT</router-link>
-        <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'register' }" v-if="!$store.state.token" class="nav-link">REGISTER</router-link>
+        <router-link v-bind:to="{ name: 'trees' }" class="nav-link">WHOLE SALE CATALOG</router-link>
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token" class="nav-link">LOGIN</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token" class="nav-link">LOGOUT</router-link>
@@ -64,9 +62,9 @@ img {
 h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
-  color: rgb(96, 137,119);
+  color: rgb(95, 136, 118);
   font-size: 5rem;
-  background-color:rgb(174, 161, 117);
+  background-color: rgb(173, 160, 116);
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
@@ -85,7 +83,7 @@ h1 {
 
 .nav-link {
   text-decoration: none;
-  color: rgb(96, 137,119);
+  color: rgb(95, 136, 118);
   padding: 10px 20px; /* Increase padding for a bigger button */
   transition: all 0.3s; /* Simplified transition property */
   font-weight: bold;
@@ -93,9 +91,11 @@ h1 {
 }
 
 .nav-link:hover {
-  color: rgb(96, 137,119);
+  color: rgb(95, 136, 118);
   transform: translateY(-3px); /* Move the button slightly up */
-  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); Enhance box shadow on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  background-color: rgb(173, 160, 116);
+  border-radius: 10px;
 }
 
 .nav-link:active {
@@ -105,7 +105,7 @@ h1 {
 .spacer {
   border-style: solid;
   border-width: 1px;
-  border-right-color:rgb(174, 161, 117);
+  border-right-color: rgb(173, 160, 116);
 }
 
 </style>
