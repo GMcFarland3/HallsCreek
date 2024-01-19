@@ -31,12 +31,12 @@ COMMIT;
 
 BEGIN TRANSACTION;
 INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (1, 'Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Acorns as fruit', '100 years', 'Low', 'Shade tree', 'Oak wilt, root rot', 'Northern Hemisphere', 'https://www.lovethegarden.com/sites/default/files/content/articles/UK_old-english-oak-tree.jpg');
+VALUES (1, 'Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Acorns as fruit', '100 years', 'Low', 'Shade tree', 'Oak wilt, root rot', 'Northern Hemisphere', 'https://drive.google.com/file/d/164N8lLt_8oXAmH1AcA3DFyKLrNKrIaEs/view?usp=drive_link');
 
 INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (3, 'Pine', 'Pinus', 'Green', 'Spring', 'Large tree, 10 to 260 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Conifer', 'Pine Cones', '100 years', 'Low', 'Ever green', 'Pine dies', 'Northern Hemisphere', 'https://www.thetreecenter.com/wp-content/uploads/eastern-white-pine-2.jpg');
+VALUES (3, 'Pine', 'Pinus', 'Green', 'Spring', 'Large tree, 10 to 260 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Conifer', 'Pine Cones', '100 years', 'Low', 'Ever green', 'Pine dies', 'Northern Hemisphere', 'https://drive.google.com/file/d/1LQuRf89iL7YU0mhukdedhZSslzuGq_LA/view?usp=drive_link');
 
 INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (5, 'Cherry', 'Prunus', 'Green', 'Spring', 'Large tree, 15 to 25 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Cherries', '100 years', 'Low', 'Fruit', 'Cherry problems', 'Northern Hemisphere', 'https://www.plantsnap.com/wp-content/uploads/2020/12/shutterstock_630092342.jpg');
+VALUES (5, 'Cherry', 'Prunus', 'Green', 'Spring', 'Large tree, 15 to 25 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Cherries', '100 years', 'Low', 'Fruit', 'Cherry problems', 'Northern Hemisphere', 'https://drive.google.com/file/d/19VTJ4D_JEWCgQ2Sxvr3bXya1rFwYf5og/view?usp=drive_link');
 
 COMMIT;
