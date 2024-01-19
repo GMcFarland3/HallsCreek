@@ -1,42 +1,38 @@
 package com.techelevator.model;
 
 public class Tree {
-
-    private int treeId;
-    private int speciesId;
+    private int treeid;
+    private int speciesid;
     private String commonName;
-    private String scientificName;
-    private String color;
-    private String bloomTime;
-    private String sizeGrowthHabit;
-    private String hardinessZone;
-    private String lightRequirement;
-    private String wateringNeeds;
-    private String soil;
-    private String leaf;
-    private String special;
-    private String lifespan;
-    private String maintenance;
-    private String uses;
-    private String pestDisease;
-    private String origin;
     private String image;
+    private String scientificName;
+    private String price1;
+    private String size1;
+    private String price2;
+    private String size2;
+    private String price3;
+    private String size3;
+    private String price4;
+    private String size4;
+    private String price5;
+    private String size5;
+    private String price6;
+    private String size6;
 
-
-    public int getTreeId() {
-        return treeId;
+    public int getTreeid() {
+        return treeid;
     }
 
-    public void setTreeId(int treeId) {
-        this.treeId = treeId;
+    public void setTreeid(int treeid) {
+        this.treeid = treeid;
     }
 
-    public int getSpeciesId() {
-        return speciesId;
+    public int getSpeciesid() {
+        return speciesid;
     }
 
-    public void setSpeciesId(int speciesId) {
-        this.speciesId = speciesId;
+    public void setSpeciesid(int speciesid) {
+        this.speciesid = speciesid;
     }
 
     public String getCommonName() {
@@ -47,6 +43,14 @@ public class Tree {
         this.commonName = commonName;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getScientificName() {
         return scientificName;
     }
@@ -55,124 +59,100 @@ public class Tree {
         this.scientificName = scientificName;
     }
 
-    public String getColor() {
-        return color;
+    public String getPrice1() {
+        return price1;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setPrice1(String price1) {
+        this.price1 = price1;
     }
 
-    public String getBloomTime() {
-        return bloomTime;
+    public String getSize1() {
+        return size1;
     }
 
-    public void setBloomTime(String bloomTime) {
-        this.bloomTime = bloomTime;
+    public void setSize1(String size1) {
+        this.size1 = size1;
     }
 
-    public String getSizeGrowthHabit() {
-        return sizeGrowthHabit;
+    public String getPrice2() {
+        return price2;
     }
 
-    public void setSizeGrowthHabit(String sizeGrowthHabit) {
-        this.sizeGrowthHabit = sizeGrowthHabit;
+    public void setPrice2(String price2) {
+        this.price2 = price2;
     }
 
-    public String getHardinessZone() {
-        return hardinessZone;
+    public String getSize2() {
+        return size2;
     }
 
-    public void setHardinessZone(String hardinessZone) {
-        this.hardinessZone = hardinessZone;
+    public void setSize2(String size2) {
+        this.size2 = size2;
     }
 
-    public String getLightRequirement() {
-        return lightRequirement;
+    public String getPrice3() {
+        return price3;
     }
 
-    public void setLightRequirement(String lightRequirement) {
-        this.lightRequirement = lightRequirement;
+    public void setPrice3(String price3) {
+        this.price3 = price3;
     }
 
-    public String getWateringNeeds() {
-        return wateringNeeds;
+    public String getSize3() {
+        return size3;
     }
 
-    public void setWateringNeeds(String wateringNeeds) {
-        this.wateringNeeds = wateringNeeds;
+    public void setSize3(String size3) {
+        this.size3 = size3;
     }
 
-    public String getSoil() {
-        return soil;
+    public String getPrice4() {
+        return price4;
     }
 
-    public void setSoil(String soil) {
-        this.soil = soil;
+    public void setPrice4(String price4) {
+        this.price4 = price4;
     }
 
-    public String getLeaf() {
-        return leaf;
+    public String getSize4() {
+        return size4;
     }
 
-    public void setLeaf(String leaf) {
-        this.leaf = leaf;
+    public void setSize4(String size4) {
+        this.size4 = size4;
     }
 
-    public String getSpecial() {
-        return special;
+    public String getPrice5() {
+        return price5;
     }
 
-    public void setSpecial(String special) {
-        this.special = special;
+    public void setPrice5(String price5) {
+        this.price5 = price5;
     }
 
-    public String getLifespan() {
-        return lifespan;
+    public String getSize5() {
+        return size5;
     }
 
-    public void setLifespan(String lifespan) {
-        this.lifespan = lifespan;
+    public void setSize5(String size5) {
+        this.size5 = size5;
     }
 
-    public String getMaintenance() {
-        return maintenance;
+    public String getPrice6() {
+        return price6;
     }
 
-    public void setMaintenance(String maintenance) {
-        this.maintenance = maintenance;
+    public void setPrice6(String price6) {
+        this.price6 = price6;
     }
 
-    public String getUses() {
-        return uses;
+    public String getSize6() {
+        return size6;
     }
 
-    public void setUses(String uses) {
-        this.uses = uses;
-    }
-
-    public String getPestDisease() {
-        return pestDisease;
-    }
-
-    public void setPestDisease(String pestDisease) {
-        this.pestDisease = pestDisease;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public void setSize6(String size6) {
+        this.size6 = size6;
     }
 }
 

@@ -7,38 +7,50 @@
           <img :src="tree.image" alt="tree" class="tree-image" />
         </div>
         <div class="tree-info">
+          <h2>{{ tree.scientificName }}</h2>
           <h3>{{ tree.commonName }}</h3>
-          <div id="description">{{ tree.scientificName }}</div>
-          <div id="subset">
-            <div class="details">[LEAF] {{ tree.leaf }}</div>
-            <div class="spacer"></div>
-            <!-- <div class="details">Average Star Rating(s) {{ displayAverageRating(tree.treeId) }}</div> -->
-            <div class="details">[EXPECTED LIFE] {{ tree.lifespan }}</div>
-            <div class="spacer"></div>
-            <div class="details">[USES] {{ tree.uses }}</div>
-          </div>
-          <div class="topspacer"></div>
-          <div class="details">{{ tree.sizeGrowthHabit }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">[COLOR] {{ tree.color }}</div>
+            <div class="details">Size(s) in inches</div>
             <div class="spacer"></div>
-            <div class="details">[BLOOM TIME] {{ tree.bloomTime }}</div>
-            <div class="spacer"></div>
-            <div class="details">[SUN] {{ tree.lightRequirement }}</div>
+            <div class="details">Price(s)</div>
           </div>
-          <div class="topspacer"></div>
-          <div class="details">{{ tree.pestDisease }}</div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">[WATERING] {{ tree.wateringNeeds }}</div>
+            <div class="details">{{ tree.size1 }}</div>
             <div class="spacer"></div>
-            <div class="details">[ZONE] {{ tree.hardinessZone }} of {{ tree.origin }}</div>
-            <div class="spacer"></div>
-            <div class="details">[SOIL] {{ tree.soil }}</div>
+            <div class="details">${{ tree.price1 }}</div>
           </div>
           <div class="topspacer"></div>
-          <router-link :to="'/selectedtree/' + tree.treeId" class="nav-link">Click here for more information and pricing</router-link>
+          <div id="subset">
+            <div class="details">{{ tree.size2 }}</div>
+            <div class="spacer"></div>
+            <div class="details">${{ tree.price2 }}</div>
+          </div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.size3 }}</div>
+            <div class="spacer"></div>
+            <div class="details">${{ tree.price3 }}</div>
+          </div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.size4 }}</div>
+            <div class="spacer"></div>
+            <div class="details">${{ tree.price4 }}</div>
+          </div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.size5 }}</div>
+            <div class="spacer"></div>
+            <div class="details">${{ tree.price5 }}</div>
+          </div>
+          <div class="topspacer"></div>
+          <div id="subset">
+            <div class="details">{{ tree.size6 }}</div>
+            <div class="spacer"></div>
+            <div class="details">${{ tree.price6 }}</div>
+          </div>
         </div>
       </div>
     </section>
@@ -104,9 +116,7 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   gap: 20px;
-  /* margin-left: 1rem; */
   background-color:  rgb(96, 137,119);
 }
 
@@ -115,7 +125,7 @@ h1 {
   border: 1px solid #080808;
   padding: 10px;
   width: 90rem;
-  height: 400px;
+  height: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -128,16 +138,12 @@ h1 {
 .tree-image-container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 10px;
-  /* width: 100%; */
   width: 300px;
   height: 300px;
 }
 
 .tree-image {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* max-width: 100%;
-  height: auto;
-  width: 100%; */
   width: 300px;
   height: 300px;
 }
@@ -151,7 +157,7 @@ h1 {
   margin-left: 1rem;
 }
 
-h3 {
+h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 0;
   padding-top: 0;
@@ -162,17 +168,15 @@ h3 {
   font-size: 2.5rem;
 }
 
-#description {
+h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 1.25rem;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
   color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-left: rgb(96, 137,119);
-  border-top: rgb(96, 137,119);
-  border-right: rgb(96, 137,119);
+  font-weight: bold;
+  font-size: 1.75rem;
 }
 
 #subset {
@@ -184,10 +188,8 @@ h3 {
   text-align: center;
 }
 
-#stock {
-  margin-top: 1rem;
-  font-weight: bold;
-  font-size: 1rem;
+.details {
+  width:50%;
 }
 
 .spacer {
@@ -208,38 +210,4 @@ h3 {
   border-right: rgb(96, 137,119);
 }
 
-.nav {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    font-size: 2rem;
-    padding-left: 4rem;
-    justify-content: center;
-    /* justify-content: flex-end; */
-    flex-direction: column;
-    text-decoration: none;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-
-/* Improved button styles and hover effect */
-.nav-link {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-    border: 1px solid gray;
-    padding: 0px 2px 0px 4px;
-    border-radius: 5px;
-    background-color: rgb(174, 161, 117);
-    margin: 0px 0px 0px 0px;
-}
-
-.nav-link:hover {
-    color: rgb(12, 12, 12);
-    background-color: rgb(253, 225, 132);
-    /* Change text color on hover */
-    /* Add additional styling for the hover effect, e.g., background color change */
-}
 </style>

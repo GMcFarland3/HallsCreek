@@ -75,8 +75,6 @@ export default {
   text-align: center;
 }
 
-
-
 .featured-section{
   width: calc(50% - 10px);
   z-index: 2;

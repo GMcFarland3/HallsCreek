@@ -1,42 +1,30 @@
 
 BEGIN TRANSACTION;
-
 INSERT INTO users (username,password_hash,role) VALUES ('bob','$2a$10$ocEQn6rIm3xDEr7SVUSLPuu5YFG12RBTu82uBgGXlwJUsf2AWH1Bq','ROLE_ADMIN');  -- User ID 3
 INSERT INTO users (username,password_hash,role) VALUES ('jack','$2a$10$xVN8wyDaN1j4YGOmQnVQbemuSxUR3C0C0zhx/i21Q7/jqUX0zPVNG','ROLE_ADMIN');  -- User ID 4
-
 COMMIT;
 
 BEGIN TRANSACTION;
-
-INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
-VALUES ('Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet');
-
--- species_id: 2
-INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
-VALUES ('Maple', 'Acer', 'Red', 'Autumn', 'Medium tree, up to 40 feet');
-
--- species_id: 3
-INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
-VALUES ('Pine', 'Pinus', 'Green', 'Non-flowering', 'Tall tree, up to 80 feet');
-
--- species_id: 4
-INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
-VALUES ('Birch', 'Betula', 'Green', 'Spring', 'Medium tree, up to 50 feet');
-
--- species_id: 5
-INSERT INTO species (commonName, scientificName, color, bloomTime, sizeGrowthHabit)
-VALUES ('Cherry', 'Prunus', 'Pink', 'Spring', 'Small tree, up to 30 feet');
-
+-- species id -> 1
+INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
+VALUES ('Acer', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
+-- species id -> 2
+INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
+VALUES ('Elm', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
+-- species id -> 3
+INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
+VALUES ('Redbud', '-1.5', '135.00', '1.5', '148.00', '2."', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
+-- species id -> 4
+INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
+VALUES ('Tulip', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
 COMMIT;
 
 BEGIN TRANSACTION;
-INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (1, 'Oak', 'Quercus', 'Green', 'Spring', 'Large tree, up to 60 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Acorns as fruit', '100 years', 'Low', 'Shade tree', 'Oak wilt, root rot', 'Northern Hemisphere', 'https://drive.google.com/file/d/164N8lLt_8oXAmH1AcA3DFyKLrNKrIaEs/view?usp=drive_link');
-
-INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (3, 'Pine', 'Pinus', 'Green', 'Spring', 'Large tree, 10 to 260 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Conifer', 'Pine Cones', '100 years', 'Low', 'Ever green', 'Pine dies', 'Northern Hemisphere', 'https://drive.google.com/file/d/1LQuRf89iL7YU0mhukdedhZSslzuGq_LA/view?usp=drive_link');
-
-INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image)
-VALUES (5, 'Cherry', 'Prunus', 'Green', 'Spring', 'Large tree, 15 to 25 feet', '3-9', 'Full sun', 'Medium', 'Well-drained', 'Deciduous', 'Cherries', '100 years', 'Low', 'Fruit', 'Cherry problems', 'Northern Hemisphere', 'https://drive.google.com/file/d/19VTJ4D_JEWCgQ2Sxvr3bXya1rFwYf5og/view?usp=drive_link');
-
+INSERT INTO trees (speciesId, commonName) VALUES (1, 'Autumn Blaze Maple');
+INSERT INTO trees (speciesId, commonName) VALUES (1, 'Redpointe Maple');
+INSERT INTO trees (speciesId, commonName) VALUES (2, 'Frontier Elm');
+INSERT INTO trees (speciesId, commonName) VALUES (2, 'Emerald Sunshine Elm');
+INSERT INTO trees (speciesId, commonName) VALUES (3, 'Eastern Redbud');
+INSERT INTO trees (speciesId, commonName) VALUES (3, 'Forest Pansy Redbud');
+INSERT INTO trees (speciesId, commonName) VALUES (4, 'Emerald City Tulip');
 COMMIT;

@@ -20,7 +20,10 @@ public class JdbcTreeDao implements TreeDao {
     @Override
     public List<Tree> listTrees() {
         List<Tree> trees = new ArrayList<>();
-        String sql = "SELECT treeid, speciesid, commonname, scientificname, color, bloomtime, sizegrowthhabit, hardinesszone, lightrequirement, wateringneeds, soil, leaf, special, lifespan, maintenance, uses, pestdisease, origin, image FROM trees ORDER BY commonname;";
+        String sql = "SELECT treeid, trees.speciesid, trees.commonname, image, species.scientificname, species.price1, species.size1,\n" +
+                "species.price2, species.size2, species.price3, species.size3, species.price4, species.size4,\n" +
+                "species.price5, species.size5, species.price6, species.size6\n" +
+                "FROM trees INNER JOIN species ON trees.speciesid = species.speciesid;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
@@ -37,7 +40,7 @@ public class JdbcTreeDao implements TreeDao {
     public void addTree(Tree tree) {
         String sql = "INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
-            jdbcTemplate.update(sql, tree.getSpeciesId(), tree.getCommonName(), tree.getScientificName(), tree.getColor(), tree.getBloomTime(), tree.getSizeGrowthHabit(), tree.getHardinessZone(), tree.getLightRequirement(), tree.getWateringNeeds(), tree.getSoil(), tree.getLeaf(), tree.getSpecial(), tree.getLifespan(), tree.getMaintenance(), tree.getUses(), tree.getPestDisease(), tree.getOrigin(), tree.getImage());
+//            jdbcTemplate.update(sql, tree.getSpeciesid(), tree.getCommonName(), tree.getScientificName(), tree.getColor(), tree.getBloomTime(), tree.getSizeGrowthHabit(), tree.getHardinessZone(), tree.getLightRequirement(), tree.getWateringNeeds(), tree.getSoil(), tree.getLeaf(), tree.getSpecial(), tree.getLifespan(), tree.getMaintenance(), tree.getUses(), tree.getPestDisease(), tree.getOrigin(), tree.getImage());
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
@@ -47,7 +50,7 @@ public class JdbcTreeDao implements TreeDao {
     public void updateTree(Tree tree, int treeId) {
         String sql = "UPDATE trees SET species_id = ? WHERE tree_id = ?;";
         try {
-            jdbcTemplate.update(sql, tree.getSpeciesId(), treeId);
+            jdbcTemplate.update(sql, tree.getSpeciesid(), treeId);
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
@@ -99,24 +102,22 @@ public class JdbcTreeDao implements TreeDao {
 
     private Tree mapRowToTree(SqlRowSet rs) {
         Tree tree = new Tree();
-        tree.setTreeId(rs.getInt("treeid"));
-        tree.setSpeciesId(rs.getInt("speciesid"));
+        tree.setTreeid(rs.getInt("treeid"));
+        tree.setSpeciesid(rs.getInt("speciesid"));
         tree.setCommonName(rs.getString("commonname"));
         tree.setScientificName(rs.getString("scientificname"));
-        tree.setColor(rs.getString("color"));
-        tree.setBloomTime(rs.getString("bloomtime"));
-        tree.setSizeGrowthHabit(rs.getString("sizegrowthhabit"));
-        tree.setHardinessZone(rs.getString("hardinesszone"));
-        tree.setLightRequirement(rs.getString("lightrequirement"));
-        tree.setWateringNeeds(rs.getString("wateringneeds"));
-        tree.setSoil(rs.getString("soil"));
-        tree.setLeaf(rs.getString("leaf"));
-        tree.setSpecial(rs.getString("special"));
-        tree.setLifespan(rs.getString("lifespan"));
-        tree.setMaintenance(rs.getString("maintenance"));
-        tree.setUses(rs.getString("uses"));
-        tree.setPestDisease(rs.getString("pestdisease"));
-        tree.setOrigin(rs.getString("origin"));
+        tree.setPrice1(rs.getString("price1"));
+        tree.setSize1(rs.getString("size1"));
+        tree.setPrice2(rs.getString("price2"));
+        tree.setSize2(rs.getString("size2"));
+        tree.setPrice3(rs.getString("price3"));
+        tree.setSize3(rs.getString("size3"));
+        tree.setPrice4(rs.getString("price4"));
+        tree.setSize4(rs.getString("size4"));
+        tree.setPrice5(rs.getString("price5"));
+        tree.setSize5(rs.getString("size5"));
+        tree.setPrice6(rs.getString("price6"));
+        tree.setSize6(rs.getString("size6"));
         tree.setImage(rs.getString("image"));
         return tree;
     }
