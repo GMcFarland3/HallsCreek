@@ -1,6 +1,3 @@
--- noinspection SqlNoDataSourceInspectionForFile
-
--- noinspection SqlDialectInspectionForFile
 
 BEGIN TRANSACTION;
 
