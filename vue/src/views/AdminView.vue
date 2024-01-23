@@ -15,51 +15,6 @@
       <label for="commonName">Common Name:</label>
       <input id="commonName" v-model="newTree.commonName" required>
 
-      <label for="scientificName">Scientific Name:</label>
-      <input id="scientificName" v-model="newTree.scientificName" required>
-
-      <label for="color">Color:</label>
-      <input id="color" v-model="newTree.color">
-
-      <label for="bloomTime">Bloom Time:</label>
-      <input id="bloomTime" v-model="newTree.bloomTime">
-
-      <label for="sizeGrowthHabit">Size and Growth Habit:</label>
-      <input id="sizeGrowthHabit" v-model="newTree.sizeGrowthHabit">
-
-      <label for="hardinessZone">Hardiness Zone:</label>
-      <input id="hardinessZone" v-model="newTree.hardinessZone">
-
-      <label for="lightRequirement">Light Requirement:</label>
-      <input id="lightRequirement" v-model="newTree.lightRequirement">
-
-      <label for="wateringNeeds">Watering Needs:</label>
-      <input id="wateringNeeds" v-model="newTree.wateringNeeds">
-
-      <label for="soil">Soil:</label>
-      <input id="soil" v-model="newTree.soil">
-
-      <label for="leaf">Leaf:</label>
-      <input id="leaf" v-model="newTree.leaf">
-
-      <label for="special">Special Features:</label>
-      <input id="special" v-model="newTree.special">
-
-      <label for="lifespan">Lifespan:</label>
-      <input id="lifespan" v-model="newTree.lifespan">
-
-      <label for="maintenance">Maintenance:</label>
-      <input id="maintenance" v-model="newTree.maintenance">
-
-      <label for="uses">Uses:</label>
-      <input id="uses" v-model="newTree.uses">
-
-      <label for="pestDisease">Pests/Diseases:</label>
-      <input id="pestDisease" v-model="newTree.pestDisease">
-
-      <label for="origin">Origin:</label>
-      <input id="origin" v-model="newTree.origin">
-
       <label for="image">Image URL:</label>
       <input type="url" id="image" v-model="newTree.image">
 
@@ -76,7 +31,7 @@
     <div class="Species">
         <h3>All Species</h3>
         <ul>
-            <li v-for="species in speciesList" :key="species.id" value="species">{{ species.commonName }} : {{ species.speciesId }}</li>
+            <li v-for="species in speciesList" :key="species.id" value="species">{{ species.scientificName }} : {{ species.speciesId }}</li>
         </ul>
   </div>
   </div>
@@ -100,22 +55,7 @@ export default {
         treeId: '',
         speciesId: '',
         commonName: '',
-        scientificName: '',
-        color: '',
-        bloomTime: '',
-        sizeGrowthHabit: '',
-        hardinessZone: '',
-        lightRequirement: '',
-        wateringNeeds: '',
-        soil: '',
-        leaf: '',
-        special: '',
-        lifespan: '',
-        maintenance: '',
-        uses: '',
-        pestDisease: '',
-        origin: '',
-        image: ''
+        image: '',
       }],
       userList: [],
       speciesList: [],

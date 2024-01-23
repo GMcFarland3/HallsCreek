@@ -42,7 +42,7 @@ CREATE TABLE trees (
    treeId SERIAL,
    speciesId int NOT NULL,
    commonName varchar(80),
-   image BYTEA,
+   image varchar(500),
    CONSTRAINT PK_tree PRIMARY KEY (treeId),
    CONSTRAINT FK_species FOREIGN KEY (speciesId) REFERENCES species(speciesId)
 );

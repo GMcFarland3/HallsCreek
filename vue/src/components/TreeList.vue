@@ -2,7 +2,7 @@
   <div>
     <section class="tree-list">
       <div><h1>Catalog</h1></div>
-      <div v-for="tree in returnTrees" :key="tree.treeId" class="tree-card">
+      <div v-for="tree in returnTrees" :key="tree.treeid" class="tree-card">
         <div class="tree-image-container">
           <img :src="tree.image" alt="tree" class="tree-image" />
         </div>
@@ -144,8 +144,8 @@ h1 {
 
 .tree-image {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 300px;
-  height: 300px;
+  height: 24rem;
+  width: 20rem;
 }
 
 .tree-info {
@@ -208,6 +208,13 @@ h3 {
   border-bottom: rgb(96, 136,118);
   border-left: rgb(96, 136,118);
   border-right: rgb(96, 136,118);
+}
+
+img {
+  border-radius: 5%;
+  border: 1px solid #080808;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 0px 10px rgb(173, 160, 116);
 }
 
 </style>

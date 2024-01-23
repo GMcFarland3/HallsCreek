@@ -28,12 +28,20 @@ export function createStore(currentToken, currentUser) {
       }],
 
       species: [ {
-        speciesId: '',
-        commonName: '',
-        scientificName: '',
-        color: '',
-        bloomTime: '',
-        sizeGrowthHabit: ''
+        speciesId:'',
+        scientificName:'',
+        price1:'',
+        size1:'',
+        price2:'',
+        size2:'',
+        price3:'',
+        size3:'',
+        price4:'',
+        size4:'',
+        price5:'',
+        size5:'',
+        price6:'',
+        size6:'',
       }],
 
       reviews: [

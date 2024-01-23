@@ -20,9 +20,10 @@ public class JdbcTreeDao implements TreeDao {
     @Override
     public List<Tree> listTrees() {
         List<Tree> trees = new ArrayList<>();
-        String sql = "SELECT treeid, trees.speciesid, trees.commonname, image, species.scientificname, species.price1, species.size1,\n" +
-                "species.price2, species.size2, species.price3, species.size3, species.price4, species.size4,\n" +
-                "species.price5, species.size5, species.price6, species.size6\n" +
+        String sql = "SELECT trees.treeid, trees.speciesid, trees.commonname, trees.image, " +
+                "species.scientificname, species.price1, species.size1, species.price2, species.size2, " +
+                "species.price3, species.size3, species.price4, species.size4, " +
+                "species.price5, species.size5, species.price6, species.size6 " +
                 "FROM trees INNER JOIN species ON trees.speciesid = species.speciesid;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -38,9 +39,9 @@ public class JdbcTreeDao implements TreeDao {
 
     @Override
     public void addTree(Tree tree) {
-        String sql = "INSERT INTO trees (speciesId, commonName, scientificName, color, bloomTime, sizeGrowthHabit, hardinessZone, lightRequirement, wateringNeeds, soil, leaf, special, lifespan, maintenance, uses, pestDisease, origin, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO trees (speciesId, commonName, image) VALUES (?, ?, ?);";
         try {
-//            jdbcTemplate.update(sql, tree.getSpeciesid(), tree.getCommonName(), tree.getScientificName(), tree.getColor(), tree.getBloomTime(), tree.getSizeGrowthHabit(), tree.getHardinessZone(), tree.getLightRequirement(), tree.getWateringNeeds(), tree.getSoil(), tree.getLeaf(), tree.getSpecial(), tree.getLifespan(), tree.getMaintenance(), tree.getUses(), tree.getPestDisease(), tree.getOrigin(), tree.getImage());
+            jdbcTemplate.update(sql, tree.getSpeciesId(), tree.getCommonName(), tree.getImage());
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
@@ -48,9 +49,9 @@ public class JdbcTreeDao implements TreeDao {
 
     @Override
     public void updateTree(Tree tree, int treeId) {
-        String sql = "UPDATE trees SET species_id = ? WHERE tree_id = ?;";
+        String sql = "UPDATE trees SET speciesId = ? WHERE treeid = ?;";
         try {
-            jdbcTemplate.update(sql, tree.getSpeciesid(), treeId);
+            jdbcTemplate.update(sql, tree.getSpeciesId(), treeId);
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
@@ -58,7 +59,7 @@ public class JdbcTreeDao implements TreeDao {
 
     @Override
     public void deleteTree(int treeId) {
-        String sql = "DELETE FROM trees WHERE tree_id = ?;";
+        String sql = "DELETE FROM trees WHERE treeid = ?;";
         try {
             jdbcTemplate.update(sql, treeId);
         } catch (CannotGetJdbcConnectionException e) {
@@ -68,7 +69,7 @@ public class JdbcTreeDao implements TreeDao {
 
     @Override
     public Tree getTreeById(int id) {
-        String sql = "SELECT tree_id, species_id FROM trees WHERE tree_id = ?;";
+        String sql = "SELECT treeid, speciesId FROM trees WHERE treeid = ?;";
         Tree tree = null;
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
@@ -80,13 +81,9 @@ public class JdbcTreeDao implements TreeDao {
         }
         return tree;
     }
-
     public List<Tree> getAllTreesWithSpecies() {
         List<Tree> trees = new ArrayList<>();
-        String sql = "SELECT t.tree_id, t.species_id, s.common_name, s.scientific_name, t.color, t.bloom_time, t.size_growth_habit, t.image "
-                + "FROM trees t "
-                + "INNER JOIN species s ON t.species_id = s.species_id "
-                + "ORDER BY t.species_id;";
+        String sql = "SELECT t.treeid, t.speciesId, t.commonname, t.image, s.scientificName, s.price1, s.size1, s.price2, s.size2, s.price3, s.size3, s.price4, s.size4, s.price5, s.size5, s.price6, s.size6 FROM trees t INNER JOIN species s ON t.speciesId = s.speciesId ORDER BY t.speciesId;";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -100,36 +97,36 @@ public class JdbcTreeDao implements TreeDao {
         return trees;
     }
 
+    private Tree mapRowToTreeWithSpecies(SqlRowSet results) {
+        Tree tree = new Tree();
+        tree.setTreeid(results.getInt("treeid"));
+        tree.setSpeciesId(results.getInt("Speciesid"));
+        tree.setCommonName(results.getString("commonname"));
+        tree.setImage(results.getString("image"));
+        tree.setScientificName(results.getString("scientificname"));
+        tree.setPrice1(results.getString("price1"));
+        tree.setSize1(results.getString("size1"));
+        tree.setPrice2(results.getString("price2"));
+        tree.setSize2(results.getString("size2"));
+        tree.setPrice3(results.getString("price3"));
+        tree.setSize3(results.getString("size3"));
+        tree.setPrice4(results.getString("price4"));
+        tree.setSize4(results.getString("size4"));
+        tree.setPrice5(results.getString("price5"));
+        tree.setSize5(results.getString("size5"));
+        tree.setPrice6(results.getString("price6"));
+        tree.setSize6(results.getString("size6"));
+        return tree;
+    }
+
     private Tree mapRowToTree(SqlRowSet rs) {
         Tree tree = new Tree();
         tree.setTreeid(rs.getInt("treeid"));
-        tree.setSpeciesid(rs.getInt("speciesid"));
+        tree.setSpeciesId(rs.getInt("Speciesid"));
         tree.setCommonName(rs.getString("commonname"));
-        tree.setScientificName(rs.getString("scientificname"));
-        tree.setPrice1(rs.getString("price1"));
-        tree.setSize1(rs.getString("size1"));
-        tree.setPrice2(rs.getString("price2"));
-        tree.setSize2(rs.getString("size2"));
-        tree.setPrice3(rs.getString("price3"));
-        tree.setSize3(rs.getString("size3"));
-        tree.setPrice4(rs.getString("price4"));
-        tree.setSize4(rs.getString("size4"));
-        tree.setPrice5(rs.getString("price5"));
-        tree.setSize5(rs.getString("size5"));
-        tree.setPrice6(rs.getString("price6"));
-        tree.setSize6(rs.getString("size6"));
         tree.setImage(rs.getString("image"));
         return tree;
     }
-    private Tree mapRowToTreeWithSpecies(SqlRowSet rs) {
-        Tree tree = new Tree();
-//        tree.setTreeId(rs.getInt("tree_id"));
-//        tree.setSpeciesId(rs.getInt("species_id"));
-//        tree.setImage(rs.getString("image")); // Mapping the image field
-//        tree.setCommonName(rs.getString("common_name"));
-//        tree.setScientificName(rs.getString("scientific_name"));
-        // Map other fields as necessary
-        return tree;
-    }
+
 
 }

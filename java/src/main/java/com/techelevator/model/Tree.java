@@ -1,10 +1,12 @@
 package com.techelevator.model;
 
 public class Tree {
+
     private int treeid;
-    private int speciesid;
+    private int speciesId;
     private String commonName;
     private String image;
+
     private String scientificName;
     private String price1;
     private String size1;
@@ -19,6 +21,7 @@ public class Tree {
     private String price6;
     private String size6;
 
+
     public int getTreeid() {
         return treeid;
     }
@@ -27,28 +30,12 @@ public class Tree {
         this.treeid = treeid;
     }
 
-    public int getSpeciesid() {
-        return speciesid;
+    public int getSpeciesId() {
+        return speciesId;
     }
 
-    public void setSpeciesid(int speciesid) {
-        this.speciesid = speciesid;
-    }
-
-    public String getCommonName() {
-        return commonName;
-    }
-
-    public void setCommonName(String commonName) {
-        this.commonName = commonName;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public void setSpeciesId(int speciesId) {
+        this.speciesId = speciesId;
     }
 
     public String getScientificName() {
@@ -154,7 +141,23 @@ public class Tree {
     public void setSize6(String size6) {
         this.size6 = size6;
     }
-}
 
+    public String getCommonName() {
+        return commonName;
+    }
+
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    // Other getters and setters for additional fields
+}
 
 
