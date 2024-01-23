@@ -2,13 +2,13 @@
   <div>
     <section class="tree-list">
       <div><h1>Catalog</h1></div>
-      <div v-for="species in returnSpecies" :key="species.speciesId" class="tree-card">
+      <div v-for="trees in returnTrees" :key="trees.speciesid" class="tree-card">
         <div class="tree-image-container">
-          <img :src="species.image" alt="tree" class="tree-image" />
+          <img :src="trees.image" alt="tree" class="tree-image" />
         </div>
         <div class="tree-info">
-          <h2>{{ species.scientificName }}</h2>
-          <h3>{{ species.commonName }}</h3>
+          <h2>{{ trees.scientificName }}</h2>
+          <h3>{{ trees.commonName }}</h3>
           <div class="topspacer"></div>
           <div id="subset">
             <div class="details">Size(s) in inches</div>
@@ -17,39 +17,39 @@
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size1 }}</div>
+            <div class="details">{{ trees.size1 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price1 }}</div>
+            <div class="details">${{ trees.price1 }}</div>
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size2 }}</div>
+            <div class="details">{{ trees.size2 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price2 }}</div>
+            <div class="details">${{ trees.price2 }}</div>
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size3 }}</div>
+            <div class="details">{{ trees.size3 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price3 }}</div>
+            <div class="details">${{ trees.price3 }}</div>
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size4 }}</div>
+            <div class="details">{{ trees.size4 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price4 }}</div>
+            <div class="details">${{ trees.price4 }}</div>
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size5 }}</div>
+            <div class="details">{{ trees.size5 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price5 }}</div>
+            <div class="details">${{ trees.price5 }}</div>
           </div>
           <div class="topspacer"></div>
           <div id="subset">
-            <div class="details">{{ species.size6 }}</div>
+            <div class="details">{{ trees.size6 }}</div>
             <div class="spacer"></div>
-            <div class="details">${{ species.price6 }}</div>
+            <div class="details">${{ trees.price6 }}</div>
           </div>
         </div>
       </div>
@@ -61,8 +61,8 @@
 
 export default {
   computed: {
-        returnSpecies() {
-          return this.$store.state.species;
+        returnTrees() {
+          return this.$store.state.trees;
         },
     },
 

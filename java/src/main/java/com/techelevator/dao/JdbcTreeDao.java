@@ -28,7 +28,8 @@ public class JdbcTreeDao implements TreeDao {
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
-                Tree tree = mapRowToTree(results);
+                Tree tree = mapRowToTreeWithSpecies(results);
+
                 trees.add(tree);
             }
         } catch (CannotGetJdbcConnectionException e) {
@@ -74,7 +75,7 @@ public class JdbcTreeDao implements TreeDao {
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
             if (results.next()) {
-                tree = mapRowToTree(results);
+                tree = mapRowToTreeWithSpecies(results);
             }
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
@@ -119,14 +120,14 @@ public class JdbcTreeDao implements TreeDao {
         return tree;
     }
 
-    private Tree mapRowToTree(SqlRowSet rs) {
-        Tree tree = new Tree();
-        tree.setTreeid(rs.getInt("treeid"));
-        tree.setSpeciesId(rs.getInt("Speciesid"));
-        tree.setCommonName(rs.getString("commonname"));
-        tree.setImage(rs.getString("image"));
-        return tree;
-    }
+//    private Tree mapRowToTree(SqlRowSet rs) {
+//        Tree tree = new Tree();
+//        tree.setTreeid(rs.getInt("treeid"));
+//        tree.setSpeciesId(rs.getInt("Speciesid"));
+//        tree.setCommonName(rs.getString("commonname"));
+//        tree.setImage(rs.getString("image"));
+//        return tree;
+//    }
 
 
 }
