@@ -4,7 +4,7 @@ import { useStore } from 'vuex'
 // Import components
 import HomeView from '../views/HomeView.vue';
 import TreeListView from '../views/TreeListView.vue';
-import SelectedTreeView from '../views/SelectedTreeView.vue';
+import WholeSaleView from '../views/WholeSaleView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
@@ -39,9 +39,9 @@ const routes = [
   },
 
   {
-    path: '/selectedtree/:treeId',
-    name: 'selectedtree',
-    component: SelectedTreeView,
+    path: '/wholesale',
+    name: 'wholesale',
+    component: WholeSaleView,
     props: true,
     meta: {
       requiresAuth: false

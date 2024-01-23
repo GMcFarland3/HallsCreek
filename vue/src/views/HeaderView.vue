@@ -9,7 +9,7 @@
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'trees' }" class="nav-link">CATALOG</router-link>
         <div class="spacer"></div>
-        <router-link v-bind:to="{ name: 'trees' }" class="nav-link">WHOLE SALE CATALOG</router-link>
+        <router-link v-bind:to="{ name: 'wholesale' }" class="nav-link">WHOLE SALE CATALOG</router-link>
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token" class="nav-link">LOGIN</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token" class="nav-link">LOGOUT</router-link>

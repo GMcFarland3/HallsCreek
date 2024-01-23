@@ -21,9 +21,9 @@ public class JdbcTreeDao implements TreeDao {
     public List<Tree> listTrees() {
         List<Tree> trees = new ArrayList<>();
         String sql = "SELECT trees.treeid, trees.speciesid, trees.commonname, trees.image, " +
-                "species.scientificname, species.price1, species.size1, species.price2, species.size2, " +
-                "species.price3, species.size3, species.price4, species.size4, " +
-                "species.price5, species.size5, species.price6, species.size6 " +
+                "species.scientificname, species.price1, species.size1, species.wholesale1, species.price2, species.size2, species.wholesale2, " +
+                "species.price3, species.size3, species.wholesale3, species.price4, species.size4, species.wholesale4, " +
+                "species.price5, species.size5, species.wholesale5, species.price6, species.size6, species.wholesale6 " +
                 "FROM trees INNER JOIN species ON trees.speciesid = species.speciesid;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -107,16 +107,22 @@ public class JdbcTreeDao implements TreeDao {
         tree.setScientificName(results.getString("scientificname"));
         tree.setPrice1(results.getString("price1"));
         tree.setSize1(results.getString("size1"));
+        tree.setWholesale1(results.getString("wholesale1"));
         tree.setPrice2(results.getString("price2"));
         tree.setSize2(results.getString("size2"));
+        tree.setWholesale2(results.getString("wholesale2"));
         tree.setPrice3(results.getString("price3"));
         tree.setSize3(results.getString("size3"));
+        tree.setWholesale3(results.getString("wholesale3"));
         tree.setPrice4(results.getString("price4"));
         tree.setSize4(results.getString("size4"));
+        tree.setWholesale4(results.getString("wholesale4"));
         tree.setPrice5(results.getString("price5"));
         tree.setSize5(results.getString("size5"));
+        tree.setWholesale5(results.getString("wholesale5"));
         tree.setPrice6(results.getString("price6"));
         tree.setSize6(results.getString("size6"));
+        tree.setWholesale6(results.getString("wholesale6"));
         return tree;
     }
 

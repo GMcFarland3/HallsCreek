@@ -10,16 +10,22 @@ public class Tree {
     private String scientificName;
     private String price1;
     private String size1;
+    private String wholesale1;
     private String price2;
     private String size2;
+    private String wholesale2;
     private String price3;
     private String size3;
+    private String wholesale3;
     private String price4;
     private String size4;
+    private String wholesale4;
     private String price5;
     private String size5;
+    private String wholesale5;
     private String price6;
     private String size6;
+    private String wholesale6;
 
 
     public int getTreeid() {
@@ -157,7 +163,54 @@ public class Tree {
     public void setImage(String image) {
         this.image = image;
     }
-    // Other getters and setters for additional fields
+
+    public String getWholesale1() {
+        return wholesale1;
+    }
+
+    public void setWholesale1(String wholesale1) {
+        this.wholesale1 = wholesale1;
+    }
+
+    public String getWholesale2() {
+        return wholesale2;
+    }
+
+    public void setWholesale2(String wholesale2) {
+        this.wholesale2 = wholesale2;
+    }
+
+    public String getWholesale3() {
+        return wholesale3;
+    }
+
+    public void setWholesale3(String wholesale3) {
+        this.wholesale3 = wholesale3;
+    }
+
+    public String getWholesale4() {
+        return wholesale4;
+    }
+
+    public void setWholesale4(String wholesale4) {
+        this.wholesale4 = wholesale4;
+    }
+
+    public String getWholesale5() {
+        return wholesale5;
+    }
+
+    public void setWholesale5(String wholesale5) {
+        this.wholesale5 = wholesale5;
+    }
+
+    public String getWholesale6() {
+        return wholesale6;
+    }
+
+    public void setWholesale6(String wholesale6) {
+        this.wholesale6 = wholesale6;
+    }
 }
 
 

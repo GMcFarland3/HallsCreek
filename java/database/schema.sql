@@ -25,16 +25,22 @@ CREATE TABLE species (
      scientificName varchar(120),
      price1 varchar(10),
      size1 varchar(10),
+     wholesale1 varchar(10),
      price2 varchar(10),
      size2 varchar(10),
+     wholesale2 varchar(10),
      price3 varchar(10),
      size3 varchar(10),
+     wholesale3 varchar(10),
      price4 varchar(10),
      size4 varchar(10),
+     wholesale4 varchar(10),
      price5 varchar(10),
      size5 varchar(10),
+     wholesale5 varchar(10),
      price6 varchar(10),
      size6 varchar(10),
+     wholesale6 varchar(10),
      CONSTRAINT PK_species PRIMARY KEY (speciesId)
 );
 
