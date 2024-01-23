@@ -15,5 +15,12 @@ export default {
     addSpecies(speciesData) {
         return axios.post('/addspecies', speciesData)
     },
+    deleteTree(treeId) {
+        return axios.delete(`/trees/${treeId}`);
+    },
+    deleteSpecies(speciesId) {
+        return axios.delete(`/species/${speciesId}`);
+    },
+
 
 }

@@ -144,7 +144,7 @@ h2 {
   border-bottom-left-radius: 75px;
   border-bottom-right-radius: 75px;
   margin-bottom: 2rem;
-  margin-left: 1rem;
+  margin-left: 17rem;
   padding-right: 4rem;
   padding-left: 2rem;
   width: 30rem;
