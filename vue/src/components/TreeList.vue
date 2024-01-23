@@ -61,8 +61,8 @@
 
 export default {
   computed: {
-        returnTrees() {
-          return this.$store.state.trees;
+        returnSpecies() {
+          return this.$store.state.species;
         },
     },
 
