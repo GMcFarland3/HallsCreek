@@ -22,6 +22,56 @@
     </form>
   </div>
 
+
+
+  <div class="newspecies">
+    <form @submit.prevent="submitSpecies">
+
+      <label for="scientificName">Scientific Name:</label>
+      <input id="scientificName" v-model="newSpecies.scientificName" required>
+
+      <label for="price1">Price 1:</label>
+      <input id="price1" v-model="newSpecies.price1">
+
+      <label for="size1">Size 1:</label>
+      <input id="size1" v-model="newSpecies.size1">
+
+      <label for="price2">Price 2:</label>
+      <input id="price2" v-model="newSpecies.price2">
+
+      <label for="size2">Size 2:</label>
+      <input id="size2" v-model="newSpecies.size2">
+
+      <label for="price3">Price 3:</label>
+      <input id="price3" v-model="newSpecies.price3">
+
+      <label for="size3">Size 3:</label>
+      <input id="size3" v-model="newSpecies.size3">
+
+      <label for="price4">Price 4:</label>
+      <input id="price4" v-model="newSpecies.price4">
+
+      <label for="size4">Size 4:</label>
+      <input id="size4" v-model="newSpecies.size4">
+
+      <label for="price5">Price 5:</label>
+      <input id="price5" v-model="newSpecies.price5">
+
+      <label for="size5">Size 5:</label>
+      <input id="size5" v-model="newSpecies.size5">
+
+      <label for="price6">Price 6:</label>
+      <input id="price6" v-model="newSpecies.price6">
+
+      <label for="size6">Size 6:</label>
+      <input id="size6" v-model="newSpecies.size6">
+
+      <button type="submit">Add Species</button>
+    </form>
+  </div>
+
+
+
     <div class="RegUsers">
         <h3>All Registered Users</h3>
         <ul>
@@ -29,12 +79,19 @@
         </ul>
     </div>
     <div class="Species">
-        <h3>All Species</h3>
         <ul>
+          <h3>All Species</h3>
             <li v-for="species in speciesList" :key="species.id" value="species">{{ species.scientificName }} : {{ species.speciesId }}</li>
+        </ul>
+      <ul>
+        <h3>All Trees</h3>
+          <li v-for="tree in treesList" :key="tree.id" value="tree">{{ tree.commonName }} : {{ tree.speciesId }}</li>
         </ul>
   </div>
   </div>
+
+
+
 </div>
 
 
@@ -51,13 +108,31 @@ import TreesService from "../services/TreesService";
 export default {
   data() {
     return {
-      newTree: [{
+      newTree: {
         treeId: '',
         speciesId: '',
         commonName: '',
         image: '',
-      }],
+      },
+      newSpecies: {
+      scientificName: '',
+        price1: '',
+        size1: '',
+        price2: '',
+        size2: '',
+        price3: '',
+        size3: '',
+        price4: '',
+        size4: '',
+        price5: '',
+        size5: '',
+        price6: '',
+        size6: '',
+      },
+
       userList: [],
+      treesList: [],
+      trees: [],
       speciesList: [],
       selectedUserId: "",
       messageText: '', // Add selectedUserId data property
@@ -73,9 +148,9 @@ export default {
     submitTree() {
       TreesService.addTree(this.newTree)
           .then(response => {
-            if (response.status === 200 || response.status === 201) {
+            if (response.status === 201) {
               console.log('Tree added successfully:', response.data);
-              this.newTree = {};
+              this.newTree = {}; // Reset the form
             } else {
               console.warn('Tree added, but status code is unexpected:', response.status);
             }
@@ -83,7 +158,23 @@ export default {
           .catch(error => {
             console.error('Error adding tree:', error);
           });
+    },
+
+    submitSpecies() {
+      TreesService.addSpecies(this.newSpecies)
+          .then(response => {
+            if (response.status === 201) {
+              console.log('Species added successfully:', response.data);
+              this.newSpecies = {}; // Reset the form
+            } else {
+              console.warn('Species added, but status code is unexpected:', response.status);
+            }
+          })
+          .catch(error => {
+            console.error('Error adding species:', error);
+          });
     }
+
   },
 
     created() {
@@ -114,6 +205,20 @@ export default {
           .catch((error) => {
             console.error("Error fetching species:", error);
           });
+
+      TreesService
+            .getTrees()
+            .then((response) => {
+              console.log("API Response:", response.data); // Log the response data
+              if (response.status == 200) {
+                this.treesList = response.data;
+                console.log("Trees List:", this.treesList); // Log the trees list
+                this.$store.commit("SET_TREES", response.data);
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching trees:", error);
+            });
     },
   };
 
@@ -133,7 +238,7 @@ export default {
   padding: 20px;
 }
 
-.newtree {
+.newtree, .newspecies {
   background-color: white;
   border-radius: 8px;
   border: 1px solid darkorange;

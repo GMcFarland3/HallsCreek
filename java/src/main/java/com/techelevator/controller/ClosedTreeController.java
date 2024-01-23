@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 
+@CrossOrigin
 @RestController
 @PreAuthorize("isAuthenticated()")
 public class ClosedTreeController {

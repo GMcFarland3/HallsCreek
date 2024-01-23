@@ -11,6 +11,9 @@ export default {
     },
     addTree(treeData) {
         return axios.post('/addtree', treeData)
-    }
+    },
+    addSpecies(speciesData) {
+        return axios.post('/addspecies', speciesData)
+    },
 
 }
