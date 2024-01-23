@@ -3,7 +3,7 @@
         <HeaderView />
         <section >
             <div>
-                <TreeList :treeId="treeId" />
+                <TreeList :speciesId="speciesId" />
             </div>
         </section>
         <FooterView />
