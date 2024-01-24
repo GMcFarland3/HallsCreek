@@ -125,7 +125,7 @@ h1 {
   border: 1px solid #080808;
   padding: 10px;
   width: 90rem;
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: row;
   align-items: top;
@@ -160,18 +160,17 @@ h1 {
 
 h2 {
   font-family: 'IM Fell English', serif;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.25rem;
   font-weight: bold;
   font-size: 2.5rem;
   color: rgb(95, 136, 118);
   background-color: rgb(173, 160, 116);
   border-bottom-left-radius: 75px;
   border-bottom-right-radius: 75px;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   margin-left: 17rem;
+  padding-top: 0;
+  padding-bottom: 0.25rem;
   padding-right: 4rem;
   padding-left: 2rem;
   width: 30rem;
