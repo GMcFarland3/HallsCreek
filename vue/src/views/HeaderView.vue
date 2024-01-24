@@ -87,7 +87,7 @@ h1 {
   padding: 10px 20px; /* Increase padding for a bigger button */
   transition: all 0.3s; /* Simplified transition property */
   font-weight: bold;
-  font-size: 2rem; /* Increase font size for larger text */
+  font-size: 1.5rem; /* Increase font size for larger text */
 }
 
 .nav-link:hover {
