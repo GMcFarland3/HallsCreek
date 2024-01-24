@@ -96,7 +96,7 @@ h1 {
 
 .tree-card {
   font-family: 'IM Fell English', serif;
-  border: 1px solid #080808;
+  border: 2px solid #080808;
   padding: 10px;
   width: 90rem;
   height: 500px;
@@ -105,8 +105,8 @@ h1 {
   align-items: top;
   text-align: center;
   margin-left: 1rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-    0px 0px 10px rgb(173, 160, 116);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 16px rgb(173, 160, 116);
 }
 
 .tree-image-container {
