@@ -94,15 +94,15 @@ export default {
 
 <style scoped>
 .white-link {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
 
 #login {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-background-image: url("../assets/img/register.jpg");
+  font-family: 'IM Fell English', serif;
+  background-image: url("../assets/img/register.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 47.8rem;
@@ -110,7 +110,7 @@ background-image: url("../assets/img/register.jpg");
 }
 
 .form-input-group {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   text-align: center;
   margin-bottom: 1rem;
   color: rgb(9, 9, 9);
@@ -118,25 +118,25 @@ background-image: url("../assets/img/register.jpg");
 }
 
 label {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-right: 0.5rem;
 }
 
 #home {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   text-align: center;
   font-size: 2rem;
   text-decoration: none;
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   font-size: 1.5rem;
   text-decoration: none;
 }
 
 button {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;

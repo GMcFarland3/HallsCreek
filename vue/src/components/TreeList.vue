@@ -27,26 +27,26 @@
             <div class="spacer"></div>
             <div class="details">${{ trees.price2 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size3"></div>
+          <div id="subset" v-if="trees.size3">
             <div class="details">{{ trees.size3 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price3 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size4"></div>
+          <div id="subset" v-if="trees.size4">
             <div class="details">{{ trees.size4 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price4 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size5"></div>
+          <div id="subset" v-if="trees.size5">
             <div class="details">{{ trees.size5 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price5 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size6"></div>
+          <div id="subset" v-if="trees.size6">
             <div class="details">{{ trees.size6 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price6 }}</div>
@@ -113,7 +113,7 @@ h1 {
 }
 
 .tree-list {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -121,56 +121,55 @@ h1 {
 }
 
 .tree-card {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   border: 1px solid #080808;
   padding: 10px;
   width: 90rem;
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: row;
-  align-items: center;
   text-align: center;
   margin-left: 1rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-  0px 0px 10px rgb(173, 160, 116);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+    8px 8px 16px rgb(173, 160, 116);
 }
 
 .tree-image-container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-bottom: 10px;
   width: 300px;
   height: 300px;
 }
 
 .tree-image {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   height: 24rem;
   width: 20rem;
 }
 
 .tree-info {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   display: flex;
   flex-direction: column;
   flex-grow: 3;
   color: white;
-  margin-left: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 h2 {
   font-family: 'IM Fell English', serif;
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.25rem;
   font-weight: bold;
   font-size: 2.5rem;
   color: rgb(95, 136, 118);
   background-color: rgb(173, 160, 116);
   border-bottom-left-radius: 75px;
   border-bottom-right-radius: 75px;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   margin-left: 17rem;
+  padding-top: 0;
+  padding-bottom: 0.25rem;
   padding-right: 4rem;
   padding-left: 2rem;
   width: 30rem;
@@ -178,7 +177,7 @@ h2 {
 }
 
 h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 0.25rem;

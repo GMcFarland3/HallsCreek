@@ -13,6 +13,7 @@
         <div class="spacer"></div>
         <router-link v-bind:to="{ name: 'login' }" v-if="!$store.state.token" class="nav-link">LOGIN</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token" class="nav-link">LOGOUT</router-link>
+        <div class="spacer" v-if="showAdmin"></div>
         <router-link v-bind:to="{ name: 'admin' }" v-if="showAdmin" class="nav-link">ADMIN</router-link>
       </div>
 
@@ -86,7 +87,7 @@ h1 {
   padding: 10px 20px; /* Increase padding for a bigger button */
   transition: all 0.3s; /* Simplified transition property */
   font-weight: bold;
-  font-size: 2rem; /* Increase font size for larger text */
+  font-size: 1.5rem; /* Increase font size for larger text */
 }
 
 .nav-link:hover {
