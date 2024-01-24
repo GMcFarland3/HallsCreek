@@ -113,7 +113,7 @@ h1 {
 }
 
 .tree-list {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -121,7 +121,7 @@ h1 {
 }
 
 .tree-card {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   border: 1px solid #080808;
   padding: 10px;
   width: 90rem;
@@ -136,20 +136,20 @@ h1 {
 }
 
 .tree-image-container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-bottom: 10px;
   width: 300px;
   height: 300px;
 }
 
 .tree-image {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   height: 24rem;
   width: 20rem;
 }
 
 .tree-info {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   display: flex;
   flex-direction: column;
   flex-grow: 3;
@@ -158,18 +158,27 @@ h1 {
 }
 
 h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
-  color: white;
   font-weight: bold;
   font-size: 2.5rem;
+  color: rgb(95, 136, 118);
+  background-color: rgb(173, 160, 116);
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  margin-bottom: 2rem;
+  margin-left: 17rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
+  width: 30rem;
+  justify-self: center;
 }
 
 h3 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 0.25rem;
