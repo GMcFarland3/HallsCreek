@@ -62,7 +62,7 @@ h1 {
   font-family: 'IM Fell English', serif;
   text-align: center;
   color: rgb(95, 136, 118);
-  font-size: 5rem;
+  font-size: 4rem;
   background-color: rgb(173, 160, 116);
   border-top-right-radius: 75px;
   border-bottom-right-radius: 75px;
@@ -105,6 +105,53 @@ h1 {
   border-style: solid;
   border-width: 1px;
   border-right-color: rgb(173, 160, 116);
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .brand, .nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-link {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .logo, img {
+    width: 100px; /* Smaller logo for mobile */
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 3rem; /* Smaller heading for mobile */
+    border-radius: 50px;
+    padding-right: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+/* Styles for even smaller screens */
+@media screen and (max-width: 480px) {
+  .nav-link {
+    font-size: 1.2rem; /* Even smaller font size for very small screens */
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
 </style>

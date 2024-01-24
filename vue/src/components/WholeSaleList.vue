@@ -200,4 +200,57 @@ img {
     0px 0px 10px rgb(173, 160, 116);
 }
 
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .tree-card {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+
+  .tree-image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .tree-image {
+    height: auto;
+    width: 100%;
+  }
+
+  .tree-info {
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    width: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+  }
+
+  #subset {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details, .spacer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+}
+
 </style>

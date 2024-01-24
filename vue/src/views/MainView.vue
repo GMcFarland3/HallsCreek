@@ -13,7 +13,6 @@
 
 <script>
 import treesService from "../services/TreesService";
-import treeSlideshow from "../components/TreeSlideshow.vue";
 
 export default {
   data() {
@@ -69,5 +68,27 @@ export default {
   position: relative;
   z-index: 1;
   color: #ada074;
+}
+
+
+/* Responsive styles for tablets and mobile phones */
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .about-box {
+    font-size: 1.4rem; /* Slightly smaller font for readability */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-container {
+    padding: 5px;
+  }
+
+  .about-box {
+    font-size: 1.2rem; /* Further reduce font size for mobile phones */
+  }
 }
 </style>

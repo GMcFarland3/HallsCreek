@@ -1,7 +1,7 @@
 
 BEGIN TRANSACTION;
 INSERT INTO users (username,password_hash,role) VALUES ('bob','$2a$10$ocEQn6rIm3xDEr7SVUSLPuu5YFG12RBTu82uBgGXlwJUsf2AWH1Bq','ROLE_ADMIN');  -- User ID 1
-INSERT INTO users (username,password_hash,role) VALUES ('jack','$2a$10$xVN8wyDaN1j4YGOmQnVQbemuSxUR3C0C0zhx/i21Q7/jqUX0zPVNG','ROLE_ADMIN');  -- User ID 2
+INSERT INTO users (username,password_hash,role) VALUES ('birddog','$2a$10$saqN7GOUGNdMJiXHSXJ9zuEwTDhwOBe5DVZqv.DxEFzRuK5Zf4/bS','ROLE_ADMIN');  -- User ID 2
 COMMIT;
 
 
@@ -10,7 +10,7 @@ BEGIN TRANSACTION;
 -- Insert species with pricing details and image URLs
 INSERT INTO species (scientificName, size1, price1, wholesale1, size2, price2, wholesale2, size3, price3, wholesale3, size4, price4, wholesale4, size5, price5, wholesale5, size6, price6, wholesale6)
 VALUES
-    ('Autumn Blaze Maple', '1.75', '235.00', '148.00', '2', '250.00', '163.00', '2.5', '300.00', '197.00', '3', '375.00', '240.00', NULL, NULL, NULL, NULL, NULL, NULL),
+    ('Red Maple', '1.75', '235.00', '148.00', '2', '250.00', '163.00', '2.5', '300.00', '197.00', '3', '375.00', '240.00', NULL, NULL, NULL, NULL, NULL, NULL),
     ('Eastern Red Bud', '1.5', '195.00','126.00', '1.75', '210.00', '135.00', '2', '250.00', '162.00', '2.5', '300.00', '195.00', '3', '350.00', '225.00', NULL, NULL, NULL),
     ('Forest Pansy', '1.5', '230.00', '150.00', '1.75', '270.00', '175.00', '2', '300.00', '195.00', '2.5', '330.00', '215.00', '3', '385.00', '250.00', NULL, NULL, NULL),
     ('Exclamation', '1.75', '195.00', '126.00', '2', '250.00', '162.00', '2.5', '300.00', '190.00', '3', '350.00', '230.00', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -27,28 +27,3 @@ INSERT INTO trees (speciesId, commonName, image) VALUES (3, 'Forest Pansy Redbud
 INSERT INTO trees (speciesId, commonName, image) VALUES (4, 'Emerald City Tulip', '');
 
 COMMIT;
-
--- BEGIN TRANSACTION;
--- -- species id -> 1
--- INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
--- VALUES ('Acer', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
--- -- species id -> 2
--- INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
--- VALUES ('Elm', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
--- -- species id -> 3
--- INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
--- VALUES ('Redbud', '-1.5', '135.00', '1.5', '148.00', '2."', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
--- -- species id -> 4
--- INSERT INTO species (scientificName, size1, price1,  size2, price2, size3, price3, size4, price4, size5, price5, size6, price6)
--- VALUES ('Tulip', '-1.5', '135.00', '1.5', '148.00', '2.0', '163.00', '2.5', '197.00', '3.0', '210.00', '+3.0', '225.00');
--- COMMIT;
---
--- BEGIN TRANSACTION;
--- INSERT INTO trees (speciesId, commonName) VALUES (1, 'Autumn Blaze Maple');
--- INSERT INTO trees (speciesId, commonName) VALUES (1, 'Redpointe Maple');
--- INSERT INTO trees (speciesId, commonName) VALUES (2, 'Frontier Elm');
--- INSERT INTO trees (speciesId, commonName) VALUES (2, 'Emerald Sunshine Elm');
--- INSERT INTO trees (speciesId, commonName) VALUES (3, 'Eastern Redbud');
--- INSERT INTO trees (speciesId, commonName) VALUES (3, 'Forest Pansy Redbud');
--- INSERT INTO trees (speciesId, commonName) VALUES (4, 'Emerald City Tulip');
--- COMMIT;

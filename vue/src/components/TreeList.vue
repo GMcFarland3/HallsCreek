@@ -109,7 +109,7 @@ h1 {
   margin-left: 1rem;
   padding-right: 4rem;
   padding-left: 2rem;
-  width: 20rem;
+  width: 30rem;
 }
 
 .tree-list {
@@ -132,7 +132,7 @@ h1 {
   text-align: center;
   margin-left: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-    0px 0px 10px rgb(173, 160, 116);
+  0px 0px 10px rgb(173, 160, 116);
 }
 
 .tree-image-container {
@@ -158,14 +158,23 @@ h1 {
 }
 
 h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'IM Fell English', serif;
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 0.25rem;
   margin-bottom: 0.25rem;
-  color: white;
   font-weight: bold;
   font-size: 2.5rem;
+  color: rgb(95, 136, 118);
+  background-color: rgb(173, 160, 116);
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  margin-bottom: 2rem;
+  margin-left: 17rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
+  width: 30rem;
+  justify-self: center;
 }
 
 h3 {
@@ -214,7 +223,61 @@ img {
   border-radius: 5%;
   border: 1px solid #080808;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
-    0px 0px 10px rgb(173, 160, 116);
+  0px 0px 10px rgb(173, 160, 116);
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .tree-card {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+
+  .tree-image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .tree-image {
+    height: auto;
+    width: 100%;
+  }
+
+  .tree-info {
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    width: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+  }
+
+  #subset {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details, .spacer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+  }
 }
 
 </style>

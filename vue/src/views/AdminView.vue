@@ -380,5 +380,23 @@ input {
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  /* Styles for tablet screens */
+  .newspecies, .newtree, .Species, .RegUsers {
+    width: 90%; /* Adjust width for tablet screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for mobile screens */
+  h3, label {
+    font-size: 1rem; /* Smaller font size for small screens */
+  }
+
+  .newspecies, .newtree, .Species, .RegUsers {
+    width: 100%; /* Full width for very small screens */
+  }
+}
+
 
 </style>
