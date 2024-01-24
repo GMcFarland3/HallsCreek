@@ -27,26 +27,26 @@
             <div class="spacer"></div>
             <div class="details">${{ trees.price2 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size3"></div>
+          <div id="subset" v-if="trees.size3">
             <div class="details">{{ trees.size3 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price3 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size4"></div>
+          <div id="subset" v-if="trees.size4">
             <div class="details">{{ trees.size4 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price4 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size5"></div>
+          <div id="subset" v-if="trees.size5">
             <div class="details">{{ trees.size5 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price5 }}</div>
           </div>
-          <div class="topspacer"></div>
-          <div id="subset">
+          <div class="topspacer" v-if="trees.size6"></div>
+          <div id="subset" v-if="trees.size6">
             <div class="details">{{ trees.size6 }}</div>
             <div class="spacer"></div>
             <div class="details">${{ trees.price6 }}</div>
@@ -128,7 +128,7 @@ h1 {
   height: 500px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: top;
   text-align: center;
   margin-left: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
@@ -154,7 +154,8 @@ h1 {
   flex-direction: column;
   flex-grow: 3;
   color: white;
-  margin-left: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 h2 {
